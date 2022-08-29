@@ -1,0 +1,161 @@
+---
+title: "Aula02"
+author: "Perecin D & Panosso AR"
+date: '2022-08-31'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      warning = FALSE,
+                      error = FALSE,
+                      message = FALSE)
+```
+
+# Delineamento Experimentais em Melhoramento
+## Instalar Pacotes necessário
+
+### Instalar os pacotes necessários para realizar o exercício, são eles, "ExpDes.pt", "agricolae" "tidyver", "ggpubr" e "Deriv".
+
+## Carregar os pacotes.
+```{r}
+library(tidyverse)
+library(ExpDes.pt)
+library(agricolae)
+library(readxl)
+library(ggpubr)
+library(Deriv)
+```
+
+## Realizar a entra de dados, pasta `data` nome do arquivo `aula2.xlsx`.
+
+```{r}
+aula2 <- read_excel("../data/aula2.xlsx")
+head(aula2)
+```
+
+## Calcular a média geral do experimento
+```{r}
+aula2 %>% pull(RESP) %>%  mean()
+```
+
+
+## Calcula a soma de quadrados totais, apenas para praticar.
+
+```{r}
+y <- aula2 %>%  pull(RESP)
+sum(y^2) - sum(y)^2/length(y)
+```
+
+
+## Construir o gráfico de dispersão
+
+```{r}
+aula2 %>%
+  ggplot(aes(x=DOSE, y=RESP)) +
+  geom_point() +
+  coord_cartesian(ylim=c(0,14))+
+  theme_bw()
+```
+
+
+## Calcular a Diferença, ou os Desvios
+```{r}
+aula2 %>%
+  group_by(TRAT) %>%
+  mutate(
+    modelo_medias = mean(RESP),
+    desvio = RESP - mean(RESP)
+  )
+```
+
+
+## Quadro da análise de variância
+
+```{r}
+trat <- aula2 %>% pull(TRAT)
+mod <- aov(y ~ trat)
+anova(mod)
+```
+
+
+## Utilizando o pacote ExpDes.pt
+```{r}
+dic(trat, y)
+```
+
+## Realizar a análise de regressão linear
+```{r}
+dose <- aula2 %>%  pull(DOSE)
+dic(dose, y,quali=FALSE)
+```
+
+
+## Construir a tabela com os valores estimados pelo modelo parabólico
+```{r}
+## modelo parabóla
+a <- -0.7750
+b <-  4.9650
+c <-  3.6750
+aula2 %>%
+  group_by(TRAT) %>%
+  mutate(
+    modelo_parabolico = a*DOSE^2 + b*DOSE + c,
+    Desvio = RESP - modelo_parabolico
+  )
+```
+
+## Criar o gráfico e adicionar a equação e o R.quadrado
+
+```{r}
+formula <- y ~ poly(x, 2, raw = TRUE)
+aula2 %>%
+  ggplot(aes(x=DOSE, y=RESP)) +
+  geom_point() +
+  coord_cartesian(ylim=c(0,14)) +
+  stat_smooth(method = "lm", se=FALSE, formula = formula) +
+  stat_regline_equation(label.y = 5,
+    aes(label =  paste(..eq.label.., ..rr.label.., sep = "~~~~")),
+    formula = formula
+  ) +
+  theme_bw()
+```
+
+## Calcular o ponto de máximo
+
+```{r}
+f <- function(x) a*x^2 + b*x + c
+Deriv(f)
+my_max <- function(a,b) -b/(2*a)
+my_max(a,b)
+```
+
+## Calcular o Erro Puro para o modelo linear
+
+```{r}
+a <- 1.09
+b <- 7.55
+aula2 %>%
+  group_by(TRAT) %>%
+  mutate(
+    modelo_linear =  a*DOSE + b,
+    desvio = RESP - modelo_linear
+  )
+```
+
+
+
+## Adicionando a equação linear no gráfico
+```{r}
+aula2 %>%
+  ggplot(aes(x=DOSE, y=RESP)) +
+  geom_point() +
+  coord_cartesian(ylim=c(0,14)) +
+  stat_smooth(method = "lm", se=FALSE) +
+  stat_regline_equation(label.y = 5,
+                        aes(label =  paste(..eq.label.., ..rr.label.., sep = "~~~~"))
+  ) +
+  theme_bw()
+```
+
+
