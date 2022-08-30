@@ -7,24 +7,25 @@
 
 ## 4) Calcular a média geral do experimento
 
-## 5) Calcula a soma de quadrados totais, apenas para praticar.
+## 5) Calcular a soma de quadrados totais, apenas para praticar.
 
 ## 6) Construir o gráfico de dispersão
 
 ## 7) Calcular a Diferença, ou os Desvios para o modelo de médias
 
-## 8) Construir o quadro da análise de variância
+## 8) Construir o Quadro da Análise de Variância (anova)
 
-## 9) Utilize o pacote ExpDes.pt
+## 9) Utilize o pacote ExpDes.pt para realizar a anova, utilize o delineamento
+## inteiramente casualizado
 
 ## 10) Realizar a análise de regressão linear
 
 ## 11) Tabela com o modelo parabólico
 
-## 12) Adicionando a equação polinomial no gráfico de dispersão
+## 12) Adicione a equação polinomial no gráfico de dispersão
 
-## 13) Utilziar a função Deriv para calcular o ponto de máximo
+## 13) Utilizar a função Deriv do pacote {Deriv} para calcular o ponto de máximo
 
-## 14) Calcular a tabela com o Erro Puro
+## 14) Construir uma tabela com o Erro Puro
 
-## 15) Adicionando a equação linear no gráfico de dispersão
+## 15) Adicione o modelo linear no gráfico de dispersão
