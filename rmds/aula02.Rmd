@@ -13,34 +13,34 @@ knitr::opts_chunk$set(echo = TRUE,
 ```
 
 # Delineamento Experimentais em Melhoramento
-## Instalar Pacotes necessário
 
-### Instalar os pacotes necessários para realizar o exercício, são eles, "ExpDes.pt", "agricolae" "tidyver", "ggpubr" e "Deriv".
+## 1) Instalar os pacotes necessários para realizar o exercício. São eles, "ExpDes.pt", "agricolae" "tidyver", "ggpubr" e "Deriv".
+  
+## 2) Carregar os pacotes.
 
-## Carregar os pacotes.
 ```{r}
 library(tidyverse)
 library(ExpDes.pt)
-library(agricolae)
+library(broom)
 library(readxl)
 library(ggpubr)
 library(Deriv)
 ```
 
-## Realizar a entra de dados, pasta `data` nome do arquivo `aula2.xlsx`.
+## 3) Realizar a entra de dados, pasta `data` nome do arquivo `aula2.xlsx`.
 
 ```{r}
 aula2 <- read_excel("../data/aula2.xlsx")
 head(aula2)
 ```
 
-## Calcular a média geral do experimento
+## 4) Calcular a média geral do experimento
 ```{r}
 aula2 %>% pull(RESP) %>%  mean()
 ```
 
 
-## Calcula a soma de quadrados totais, apenas para praticar.
+## 5) Calcula a soma de quadrados totais, apenas para praticar.
 
 ```{r}
 y <- aula2 %>%  pull(RESP)
@@ -48,7 +48,7 @@ sum(y^2) - sum(y)^2/length(y)
 ```
 
 
-## Construir o gráfico de dispersão
+## 6) Construir o gráfico de dispersão, resposta em função das doses.
 
 ```{r}
 aula2 %>%
@@ -59,7 +59,8 @@ aula2 %>%
 ```
 
 
-## Calcular a Diferença, ou os Desvios
+## 7) Calcular a Diferença, ou os Desvios para o modelo de médias.
+
 ```{r}
 aula2 %>%
   group_by(TRAT) %>%
@@ -70,7 +71,7 @@ aula2 %>%
 ```
 
 
-## Quadro da análise de variância
+## 8) Construir o Quadro da Análise de Variância (anova), para tratamentos.
 
 ```{r}
 trat <- aula2 %>% pull(TRAT)
@@ -79,19 +80,59 @@ anova(mod)
 ```
 
 
-## Utilizando o pacote ExpDes.pt
+## 9) Utilize o pacote {ExpDes.pt} para realizar a anova, utilize o delineamento inteiramente casualizado.
 ```{r}
 dic(trat, y)
 ```
 
-## Realizar a análise de regressão linear
+## 10) Realizar a análise de regressão linear simples., utilize a função plot do pacote {base} para explorar os resíduos, e as funções `glance` e `augment` do pacote {broom} para estudar o modelo e a reta de ajuste.
+
 ```{r}
-dose <- aula2 %>%  pull(DOSE)
-dic(dose, y,quali=FALSE)
+## Modelo Linear
+dose <- aula2 %>% pull(DOSE)
+modelo <- lm(y ~ dose) # se usa modelo <- lm(y ~ dose -1), fixo o zero no modelo
+plot(modelo)
+glance(modelo)
+augment(modelo)
+augment(modelo, interval="confidence")
+```
+
+```{r}
+tabela_modelo_linear <- augment(modelo, interval = "confidence")
+tabela_modelo_linear %>% 
+  ggplot(aes(x=dose)) +
+  geom_point(aes(y=y),col="blue",size=3) +
+  geom_line(aes(y=.fitted),col="red") +
+  theme_minimal()
 ```
 
 
-## Construir a tabela com os valores estimados pelo modelo parabólico
+```{r}
+## Modelo polinomial de ordem 2
+dose2<-dose*dose
+modelo_2 <- lm(y ~ dose + dose2)
+plot(modelo_2)
+glance(modelo_2)
+tabela_modelo_quadratico <- augment(modelo_2, interval = "confidence")
+```
+
+```{r}
+tabela_modelo_quadratico %>% 
+  ggplot(aes(x=dose)) +
+  geom_point(aes(y=y),col="blue",size=3) +
+  geom_line(aes(y=.fitted),col="red") +
+  theme_minimal()
+```
+
+
+## 11) Utilize o pacote {ExpDes.pt} para realizar a análise de regressão.
+```{r}
+dose <- aula2 %>%  pull(DOSE)
+dic(dose, y, quali=FALSE)
+```
+
+
+## 12) Construir a tabela com os valores estimados pelo modelo parabólico
 ```{r}
 ## modelo parabóla
 a <- -0.7750
@@ -105,7 +146,7 @@ aula2 %>%
   )
 ```
 
-## Criar o gráfico e adicionar a equação e o R.quadrado
+## 13) Criar o gráfico e Adicione a equação polinomial no gráfico de dispersão, adicione o Rquadrado.
 
 ```{r}
 formula <- y ~ poly(x, 2, raw = TRUE)
@@ -121,16 +162,15 @@ aula2 %>%
   theme_bw()
 ```
 
-## Calcular o ponto de máximo
+##  14) Utilizar a função Deriv do pacote {Deriv} para calcular o ponto de máximo
 
 ```{r}
 f <- function(x) a*x^2 + b*x + c
 Deriv(f)
-my_max <- function(a,b) -b/(2*a)
-my_max(a,b)
+-b/(2*a)
 ```
 
-## Calcular o Erro Puro para o modelo linear
+## 15) Calcular o Erro Puro para o modelo linear
 
 ```{r}
 a <- 1.09
@@ -145,7 +185,7 @@ aula2 %>%
 
 
 
-## Adicionando a equação linear no gráfico
+## 16) Adicionando o modelo linear no gráfico de dispersão
 ```{r}
 aula2 %>%
   ggplot(aes(x=DOSE, y=RESP)) +
