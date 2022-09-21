@@ -15,7 +15,8 @@ aula4
 trat <- aula4 %>% pull(trat) %>% as_factor()
 y <- aula4 %>% pull(resp)
 
-dic(trat, y, quali = TRUE, mcomp = "tukey", sigT = 0.05, sigF = 0.05)
+dic(trat, y, quali = TRUE, mcomp = "tukey",
+    sigT = 0.05, sigF = 0.05)
 
 # caso 2: com duas origens ou acessos;
 contrasts(trat)
@@ -87,7 +88,7 @@ summary(modelo_03,
                            "interação mae e pai"= 3)))
 
 
-# caso 5: dialelos ou fatorial;
+# caso 5: ajuste de regressão
 contrasts(trat)
 
 # construção dos coeficientes dos contrastes
@@ -108,4 +109,7 @@ summary(modelo_04,
                       list("linear"= 1,
                            "quadrático"= 2,
                            "cúbico"= 3)))
+
+# analise de regressão
+dic(trat, y, quali=FALSE)
 
