@@ -56,7 +56,7 @@ dic(dose, resp,
     quali = FALSE)
 
 aula3[27,4] <- NA
-view(aula3)
+View(aula3)
 
 
 
