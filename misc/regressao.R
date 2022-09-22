@@ -17,12 +17,31 @@ y <- aula4 %>% pull(resp)
 
 dic(trat, y, quali = TRUE, mcomp = "tukey",
     sigT = 0.05, sigF = 0.05)
-
+## https://www.r-bloggers.com/2017/06/linear-models-anova-glms-and-mixed-effects-models-in-r/
 mod1 <- aov(y ~ trat)
 model.tables(mod1, type="effects")
 model.tables(mod1, type="means")
 tab <- model.tables(mod1, type="effects")
 pluck(tab,1)$trat + mean(y)
+
+
+mod2 <- lm(y~trat)
+summary(mod2)
+# trat1 não é mostrado
+# pois ele é considerado o nivel de referencia
+# 15 é a média para o TRAT1
+# para calcula a média, é so somar o valor de ref
+# com os demais slopes
+# trat2 = 15 + 2 = 17
+
+# pode-se mudar a referencia com o relevel
+trat = relevel(trat, ref=2)
+mod3 <- lm(y ~ trat)
+summary(mod3)
+
+# mudar a soma para não balanceados
+library(car)
+Anova(mod2,type = "III")
 
 # caso 2: com duas origens ou acessos;
 contrasts(trat)
@@ -46,7 +65,19 @@ summary(modelo_01,
                            "trat dentro da origem A"= 2,
                            "trat dentro da origem B"= 3)))
 
+a4 <- aula4 %>%
+  mutate(
+    origem = ifelse(origem=="A",-1,1),
+    origemA = ifelse(trat==1,-1,ifelse(trat==2,1,0)),
+    origemB = ifelse(trat==3,-1,ifelse(trat==4,1,0))
+  )
+model <- lm(resp ~ origem + origemA + origemB, data=a4)
+anova(model)
 
+
+origem <- aula4 %>% pull(origem) %>% as.factor()
+model <- lm(y ~ origem)
+anova(model)
 
 # caso 3: com uma testemunha;
 contrasts(trat)
@@ -93,7 +124,10 @@ summary(modelo_03,
                            "pai b1 vs pai b2"= 2,
                            "interação mae e pai"= 3)))
 
-
+mae <- aula4 %>% pull(mae) %>%  as_factor()
+pai <- aula4 %>% pull(pai) %>%  as_factor()
+model <- lm(y ~ mae*pai)
+anova(model)
 # caso 5: ajuste de regressão
 contrasts(trat)
 
@@ -119,3 +153,4 @@ summary(modelo_04,
 # analise de regressão
 dic(trat, y, quali=FALSE)
 
+## https://mspeekenbrink.github.io/sdam-r-companion/contrast-coding-and-oneway-anova.html
