@@ -9,7 +9,6 @@ library(ExpDes.pt)
 aula4 <- read_excel("data/aula4.xlsx")
 aula4
 
-
 # caso 1: sem informação prévia sobre os trat;
 ## Anova pelo ExpDes
 trat <- aula4 %>% pull(trat) %>% as_factor()
@@ -18,11 +17,6 @@ y <- aula4 %>% pull(resp)
 dic(trat, y, quali = TRUE, mcomp = "tukey",
     sigT = 0.05, sigF = 0.05)
 
-mod1 <- aov(y ~ trat)
-model.tables(mod1, type="effects")
-model.tables(mod1, type="means")
-tab <- model.tables(mod1, type="effects")
-pluck(tab,1)$trat + mean(y)
 
 # caso 2: com duas origens ou acessos;
 contrasts(trat)
@@ -48,6 +42,16 @@ summary(modelo_01,
 
 
 
+# Ou podemos criar as variáveis auxiliáres.
+a4 <- aula4 %>%
+  mutate(
+    origem = ifelse(origem=="A",-1,1),
+    OdA = ifelse(trat==1,-1,ifelse(trat==2,1,0)),
+    OdB = ifelse(trat==3,-1,ifelse(trat==4,1,0))
+  )
+model <- lm(resp ~ origem + OdA + OdB, data=a4)
+anova(model)
+
 # caso 3: com uma testemunha;
 contrasts(trat)
 
@@ -71,6 +75,16 @@ summary(modelo_02,
                            "trat dentro da origem B"= 3)))
 
 
+# ou utilizando variáveis auxiliares
+a4 <- aula4 %>%
+  mutate(
+    TestVsNovo = ifelse(trat==1,-1,1),
+    OdNovo = ifelse(trat==2,-2,ifelse(trat==1,0,-1)),
+    TratdOb = ifelse(trat==3,-1,ifelse(trat==4,1,0))
+  )
+model <- lm(resp ~ TestVsNovo + OdNovo + TratdOb, data=a4)
+anova(model)
+
 # caso 4: dialelos ou fatorial;
 contrasts(trat)
 
@@ -93,6 +107,10 @@ summary(modelo_03,
                            "pai b1 vs pai b2"= 2,
                            "interação mae e pai"= 3)))
 
+
+## Ou simplesmente
+model <- lm(resp ~ mae*pai, data=aula4)
+anova(model)
 
 # caso 5: ajuste de regressão
 contrasts(trat)
