@@ -6,6 +6,7 @@ library(skimr)
 library(VCA)
 library(nlme)
 
+# Exercícios Práticos -----------------------------------------------------
 ## 1) Carregar os dados que estão no arquivo aula5.xlsx
 
 ## 2) Qual o tipo de primitivo de cada coluna?
@@ -38,7 +39,8 @@ library(nlme)
 
 ## 13) Agrupe as categorias com menores frequências em uma única categoria
 
-## Exemplos de Aula - Análises
+
+# Exemplo de Aula Teórica -------------------------------------------------
 ## Entrada de dados
 familia <- aula5 %>% pull(familia) %>%  as_factor()
 bloco <- aula5 %>% pull(bloco) %>%  as_factor()
@@ -50,18 +52,29 @@ y <- aula5 %>% pull(resp)
 modelo_01 <- aov(y ~ bloco + familia  + Error(bloco/familia) + genotipo:bloco )
 summary(modelo_01)
 
-a5<- as.data.frame(aula5)
-a5$familia <- as_factor(a5$familia)
-a5$bloco <- as_factor(a5$bloco)
-fitVCA(resp~bloco + familia/bloco, a5)
+# Manipulação para criação de fatores
+a5 <- aula5 %>%
+  mutate(
+    bloco = as_factor(bloco),
+    familia = as_factor(familia)
+  ) %>%  data.frame
+fitVCA(resp~bloco + familia + familia/bloco, a5)
 
 ## b)	ANOVA,usando média das progênies, em cada combinação de bloco e familia:
-modelo_02 <- aov(y ~ bloco + familia )
+a5_media <- aula5 %>%
+  group_by(familia, bloco) %>%
+  summarize(media = mean(resp)) %>%
+  mutate(
+    familia = as_factor(familia),
+    bloco = as_factor(bloco)
+  ) %>%
+  data.frame()
+modelo_02 <- aov(media ~ bloco + familia, data=a5_media  )
 summary(modelo_02)
-anova(modelo_02)
-fitVCA(resp~bloco + familia + bloco:familia, a5)
+fitVCA(media~bloco + familia, a5_media, "anova")
 
-## Componentes de veriância utilizando o delineamento em quadrado latino
+# Exercicio 5 - item 6 ----------------------------------------------------
+## Componentes de variância utilizando o delineamento em quadrado latino
 aula5_ql <- read.table("data/aula5_ql.txt",
                        h=TRUE)
 head(aula5_ql)
