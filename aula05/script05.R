@@ -1,23 +1,49 @@
-# BLOCOS COM FAMÍLIAS E PROGENIES  DENTRO DE FAMÍLIAS
 ## Carregando os pacotes
-##https://bookdown.org/hhwagner1/LandGenCourse_book/video_6.html
-# https://cran.r-project.org/web/packages/VCA/vignettes/VCA_package_vignette.html
 library(tidyverse)
-library(agricolae)
 library(readxl)
 library(ExpDes.pt)
-library(lme4)
+library(skimr)
 library(VCA)
 library(nlme)
 
+## 1) Carregar os dados que estão no arquivo aula5.xlsx
+
+## 2) Qual o tipo de primitivo de cada coluna?
+
+## 3) Faça uma estatística descritiva rápida das colunas
+
+## 4) Quantas famílias, genótipos e blocos temos no experimento?
+
+## 5) Converta as colunas familia, bloco e genotipo para fatores
+
+## 6) Crie um gráfico de colunas com as médias de cada familia
+
+## 7) Altere o gráfico para que as médias seja apresentadas em ordem
+## crescente.
+
+## 8) Altere as cores do gráfico para aquelas de sua preferência.
+
+## 9) Inverta as coordenadas cartesianas.
+
+## 10) Crie a a vairável `agrupamento`, a partir da seguinte regra:
+## genótipo de de 1 a 5 - A
+## genótipo de 16 a 28 - B
+## genótipo de 29 a 49 - C
+## genótipo de 50 a 54 - D
+
+## 11) Faça a contagem de subject, ordenando-os
+
+## 12) Agrupe as categorias com menores frequências em uma única categoria
+
+## Exemplos de Aula - Análises
 ## Entrada de dados
-aula5 <- read_excel("data/aula5.xlsx")
 familia <- aula5 %>% pull(familia) %>%  as_factor()
 bloco <- aula5 %>% pull(bloco) %>%  as_factor()
 genotipo <- aula5 %>% pull(genotipo) %>%  as_factor()
 genotipo_b <- aula5 %>% pull(genotipo_b) %>%  as_factor()
 y <- aula5 %>% pull(resp)
 
+# BLOCOS COM FAMÍLIAS E PROGENIES  DENTRO DE FAMÍLIAS
 ## a)	ANOVA, usando as progenies:
 modelo_01 <- aov(y ~ bloco + familia  + Error(bloco/familia) + genotipo:bloco )
 summary(modelo_01)
@@ -43,21 +69,10 @@ coluna  <- aula5_ql %>% pull(COLUNA) %>% as_factor()
 trat  <- aula5_ql %>% pull(TRAT) %>% as_factor()
 y  <- aula5_ql %>% pull(RESP)
 
+# definindo o modelo
 m0 <- aov(y ~ linha + coluna + trat)
 anova(m0)
 
 ## usando o Exp.Des.pt
 ExpDes.pt::dql(trat, linha, coluna, y, quali = TRUE,
                mcomp = "tukey")
-
-
-## Vamos especificar os efeito fixos e aleatório, usando
-## o pacote nlme
-m1 <- lme(y ~ trat, random = ~1|linha/coluna)
-anova.lme(m1)
-summary(m1)
-
-
-m1 <- lme(y ~ linha + coluna, random = ~1|trat)
-anova.lme(m1)
-summary(m1)
