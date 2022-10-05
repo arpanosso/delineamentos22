@@ -18,11 +18,6 @@ pt_ad_1 <- aula6_ad %>%
   theme_bw()
 pt_ad_1
 
-## Análise de variância.
-trat <- aula6_ad %>%  pull(cultivar) %>% as_factor()
-bloco <- aula6_ad %>%  pull(bloco) %>% as_factor()
-y <- aula6_ad %>%  pull(resp)
-
 ## Excluindo o valor 35
 pt_ad_2 <- aula6_ad %>%
   filter(resp != 35) %>%
@@ -42,6 +37,9 @@ pt_ad_1 / pt_ad_2
 
 # Sem aditividade
 ## Análise de variância
+trat <- aula6_ad %>%  pull(cultivar) %>% as_factor()
+bloco <- aula6_ad %>%  pull(bloco) %>% as_factor()
+y <- aula6_ad %>%  pull(resp)
 mod <- aov(y ~bloco + trat)
 anova(mod)
 
