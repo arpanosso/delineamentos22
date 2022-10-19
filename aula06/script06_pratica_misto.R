@@ -42,7 +42,5 @@ mod_mixed <- lmer(y ~ bloco + (1 | cultivar))
 summary(mod_mixed)
 as.data.frame(ranef(mod_mixed))
 confint(mod_mixed)
-ranef(mod_mixed)$cultivar %>% head(10)
-coef(mod_mixed)$cultivar %>% head(10)
-
-ranef(mod_mixed)$cultivar %>% head(10) + mean(y)
+VarCorr(mod_mixed) # Variância
+confint(mod_mixed) # intervalo de confiânça
