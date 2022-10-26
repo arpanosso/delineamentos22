@@ -1,77 +1,37 @@
 ## Carregando os pacotes exigidos
 library(tidyverse)
 library(emmeans)
-## Lendo o banco de dados
-dados <- readxl::read_xlsx("data/aula8-curva.xlsx") %>%
-  mutate(across(is.character, as_factor))
 
-## Criar as variáveis auxiliares para DOSEA e DOSEB em função de TRAT
-dados <- dados %>%
-  mutate(DOSEA = ifelse(TRAT == 'A',DOSE,0),
-         DOSEB = ifelse(TRAT == 'B',DOSE,0))
-dplyr::glimpse(dados)
+## 1) Lendo o banco de dados que está em aula8-curvatura.xlsx
+## passe as colunas do tipo character para fator
 
-## Crie o gráfico de dispersão da resposta por dose
-dados %>%
-  ggplot(aes(x=DOSE, y=RESP, shape=TRAT, color=TRAT)) +
-  geom_point()
+## 2) Criar as variáveis auxiliares para DOSEA e DOSEB em função de TRAT
+## também conhecida como variáveis dummy /dummies
 
-# Análise de variância preliminar.
-m0 <- aov(RESP ~ TRAT_DOSE, data=dados%>%
-           mutate(
-             TRAT_DOSE = interaction(TRAT, DOSE)
-           ))
-anova(m0)
-## Extrair a soma de  quadrados dos resíduos, seus graus de liberdade e
-## calcular CoefVar, Desvio Padrão, Media Geral
-y <- dados %>% pull(RESP)
-SQr <- deviance(m0)
-GLr <- df.residual(m0)
-QMr <- SQr/GLr
-yp <-  predict(m0)
-mean(y)
-100*QMr^(.5)/mean(y)
-sqrt(QMr)
+## 3) Crie o gráfico de dispersão da resposta por dose
+## o gráfico pode ser feito para cada tratamento
 
-## Interação
-modelo <- aov(
-    RESP ~ TRAT*DOSE,
-    data=dados %>% mutate_at(vars(DOSE),as_factor)
-)
-anova(modelo)
+## 4) Análise de variância utilizando tratamentos como combinação
+## TRAT_DOSE.
 
+## 5) Extrair a soma de  quadrados dos resíduos, seus graus de liberdade e
+## calcular CoefVar, Desvio Padrão e Media Geral
 
-## Boxplot por trat_dose
+## 6) Faça o estudo da Interação, considerando DOSE como fator
 
-dados %>%
-  mutate(
-    TRAT_DOSE = interaction(TRAT, DOSE,sep=""),
-    TRAT_DOSE = fct_relevel(TRAT_DOSE,"A5","A10","A13")
-  ) %>%
-  ggplot(aes(x=TRAT_DOSE, y=RESP)) +
-  geom_boxplot()
+## 7) COnstrua os Boxplots por trat_dose, se necessário, utilize a
+## função fct_relevel para reordenar o níveis dos fatores
 
-dados %>%
-  group_by(TRAT,DOSE) %>%
-  summarise(
-    n=n(),
-    Mean = mean(RESP),
-    Std_Dev = sd(RESP)
-  )
+## 8) Construa uma tabela de estatística descritiva com os trat, doses
+## e médias de respostas com respectivos desvios padrões, semelhante à do SAS
 
-emmeans(modelo, pairwise ~ TRAT:DOSE,
-        adjust = "tukey")
+## 9) Faça a comparação das médias pelo teste de tukey, utilize emmeans
+## juntamnete com pairwise ~ TRAT:DOSE
 
-agricolae::LSD.test(m0,"TRAT_DOSE",
-                    console = TRUE)
+## 10) Faça acomparação pelo test t, utilize a função LSD.test do pacote
+## agricolae
 
-m1 <- aov(
-  RESP ~ TRAT + TRAT/DOSEA + DOSEA:TRAT_DOSEA + TRAT/DOSEB +
-    DOSEB:TRAT_DOSEB,
-  data=dados %>%
-    mutate(
-      TRAT_DOSEA = interaction(TRAT,DOSEA),
-      TRAT_DOSEB = interaction(TRAT,DOSEB)
-    )
-)
-summary(m1)
+## Estudo os efeitos linear em A e Linear em B, quadrático em A e quadratico
+## em B, para isso construa as variáveis auxiliares TRAT_DOASEA e TRAT_DOSEB
+## utilize o modelo
+## RESP ~ TRAT + DOSEA + DOSEA:TRAT_DOSEA + TRAT/DOSEB + DOSEB:TRAT_DOSEB
