@@ -1,44 +1,82 @@
-#pacotes
+## Carregar os pacotes necessários
 library(tidyverse)
 library(skimr)
-# nomes das planilhas
-planilhas <- readxl::excel_sheets("data/aula9.xlsx")
 
+# 1) Utilizando a função "excel_sheets" do pacote {readxl} extraia
+# os nomes das planilhas do arquivo aula9.xlsx
+pla <-readxl::excel_sheets("data/aula9.xlsx")
 
-
-# Fat 3x3x3 ---------------------------------------------------------------
-# lendo
+# COM CONFUNDIMENTO, BLOCOS DE TAMANHO 9 -----------------------------------
+# Ler o banco de dados
 fat333 <- readxl::read_xlsx("data/aula9.xlsx",
-                           sheet = "Fat333")
+                           sheet = pla[1])
 # vislumbre
 glimpse(fat333)
 
-# resumo rapito
+# resumo rápido
 skim(fat333)
 
-## anova
+# Criação do modelo
 mod <- aov(RESP ~ BL + A*B*C,
    data = fat333 %>%
      mutate_at(vars(A,B,C,BL), as.factor)
 )
+
+# Análise de variância
 anova(mod)
-(deviance(mod)/ df.residual(mod))^.5 / mean(fat333$RESP) *100
 
-
-# Metade 2^5 --------------------------------------------------------------
-# lendo
+# "EXEMPLO BLOCO metade de 2^5" --------------------------------------------
+# Ler o banco de dados
 metade_25 <- readxl::read_xlsx("data/aula9.xlsx",
-                              sheet = "Metades2_5")
+                              sheet = pla[2])
+# Vislumbre dos dados
 glimpse(metade_25)
+
+# Criação do modelo
 mod <- aov(RESP ~ BLOCO + A + B + C+ D+ E + A:B + A:C + A:D
            + A:E + B:C + B:D + B:E + C:D + C:E + D:E,
            data = metade_25 %>%
              mutate_at(vars(A,B,C,D,E,BLOCO), as.factor)
 )
+
+# Análise de variância
 anova(mod)
 
-# Tres Fatores no SAS -----------------------------------------------------
+# 'ATORIAL 3 FATORES - modelos mistos --------------------------------------
 # lendo
 tres_fat <- readxl::read_xlsx("data/aula9.xlsx",
-                              sheet = "TresFatresSas")
+                              sheet = pla[3])
 glimpse(tres_fat)
+
+## Análise preliminar com os tratamentos
+
+mod <- aov(Resp ~ Trat,
+           data = tres_fat %>% mutate_at(vars(Trat), as_factor))
+
+anova(mod)
+
+## Análise com 3 fatores
+
+mod <- aov(terms(Resp ~ A+ B +A:B +C + A:C + B:C + A:B:C),
+           data = tres_fat %>% mutate_at(vars(A,B,C), as_factor))
+
+anova(mod)
+
+car::Anova(mod, type=2)
+
+mod <- lme4::lmer(Resp ~ A + (1 | B) + (1 | C)+
+                    (1 | A:B) + (1 | A:C) + (1 | B:C)+
+                    (1 | A:B:C),
+           data = tres_fat %>%
+             mutate_at(vars(A,B,C), as_factor)
+)
+summary(mod)
+VCA::fitVCA(Resp ~ A*B*C, tres_fat %>% data.frame() )
+as.data.frame(ranef(mod))
+confint(mod)
+VarCorr(mod) # Variância
+
+
+data.frame(ranef(mod))
+
+
