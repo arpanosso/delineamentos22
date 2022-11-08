@@ -1,6 +1,7 @@
 ## Carregar os pacotes necessários
 library(tidyverse)
 library(skimr)
+library(lme4)
 
 # 1) Utilizando a função "excel_sheets" do pacote {readxl} extraia
 # os nomes das planilhas do arquivo aula9.xlsx
@@ -80,3 +81,7 @@ VarCorr(mod) # Variância
 data.frame(ranef(mod))
 
 
+emm <- emmeans::emmeans(mod, specs = ~A)
+
+pairs(emm,
+      adjust="tukey")
