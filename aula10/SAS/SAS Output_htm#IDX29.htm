@@ -1,0 +1,2299 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><META content="IE=5.0000" http-equiv="X-UA-Compatible">
+<TITLE>SAS Output</TITLE>
+<META name=GENERATOR content="MSHTML 11.00.10570.1001">
+<META content="text/html; charset=windows-1252" http-equiv=Content-type>
+<STYLE type=text/css>.aftercaption {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; PADDING-TOP: 4pt; BORDER-SPACING: 0px; BACKGROUND-COLOR: #fafbfe
+}
+.batch {
+	FONT-SIZE: x-small; BORDER-TOP: #c1c1c1 1px solid; FONT-FAMILY: 'SAS Monospace', 'Courier New', Courier, monospace; BORDER-RIGHT: #c1c1c1 1px solid; BORDER-COLLAPSE: separate; BORDER-BOTTOM: #c1c1c1 1px solid; FONT-WEIGHT: normal; COLOR: #000000; PADDING-BOTTOM: 7px; FONT-STYLE: normal; PADDING-TOP: 7px; PADDING-LEFT: 7px; BORDER-SPACING: 1px; BORDER-LEFT: #c1c1c1 1px solid; PADDING-RIGHT: 7px; BACKGROUND-COLOR: #fafbfe
+}
+.beforecaption {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BORDER-SPACING: 0px; BACKGROUND-COLOR: #fafbfe
+}
+.body {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; MARGIN-LEFT: 8px; BACKGROUND-COLOR: #fafbfe; MARGIN-RIGHT: 8px
+}
+.bodydate {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; WIDTH: 100%; VERTICAL-ALIGN: top; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; TEXT-ALIGN: right; BORDER-SPACING: 0px; BACKGROUND-COLOR: #fafbfe
+}
+.bycontentfolder {
+	LIST-STYLE-TYPE: none; FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; MARGIN-LEFT: 6pt
+}
+.byline {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BORDER-SPACING: 0px; BACKGROUND-COLOR: #fafbfe
+}
+.bylinecontainer {
+	FONT-SIZE: x-small; BORDER-TOP: #000000 0px solid; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; BORDER-RIGHT: #000000 0px solid; WIDTH: 100%; BORDER-BOTTOM: #000000 0px solid; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; BORDER-SPACING: 1px; BORDER-LEFT: #000000 0px solid; BACKGROUND-COLOR: #fafbfe
+}
+.caption {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BORDER-SPACING: 0px; BACKGROUND-COLOR: #fafbfe
+}
+.cell {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.container {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.contentfolder {
+	LIST-STYLE-TYPE: none; FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; MARGIN-LEFT: 6pt
+}
+.contentitem {
+	LIST-STYLE-TYPE: none; FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; MARGIN-LEFT: 6pt
+}
+.contentproclabel {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.contentprocname {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.contents {
+	LIST-STYLE-TYPE: decimal; FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; MARGIN-LEFT: 8px; BACKGROUND-COLOR: #fafbfe; MARGIN-RIGHT: 8px
+}
+.contentsdate {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; WIDTH: 100%; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.contenttitle {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: italic; BACKGROUND-COLOR: #fafbfe
+}
+.continued {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; WIDTH: 100%; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BORDER-SPACING: 0px; BACKGROUND-COLOR: #fafbfe
+}
+.data {
+	FONT-SIZE: x-small; BORDER-TOP: #c1c1c1 0px solid; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; BORDER-RIGHT: #c1c1c1 1px solid; BORDER-BOTTOM: #c1c1c1 1px solid; FONT-WEIGHT: normal; FONT-STYLE: normal; BORDER-LEFT: #c1c1c1 0px solid; BACKGROUND-COLOR: #ffffff
+}
+.dataemphasis {
+	FONT-SIZE: x-small; BORDER-TOP: #c1c1c1 0px solid; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; BORDER-RIGHT: #c1c1c1 1px solid; BORDER-BOTTOM: #c1c1c1 1px solid; FONT-WEIGHT: normal; FONT-STYLE: normal; BORDER-LEFT: #c1c1c1 0px solid; BACKGROUND-COLOR: #ffffff
+}
+.dataemphasisfixed {
+	FONT-SIZE: x-small; BORDER-TOP: #c1c1c1 0px solid; FONT-FAMILY: 'Courier New', Courier, monospace; BORDER-RIGHT: #c1c1c1 1px solid; BORDER-BOTTOM: #c1c1c1 1px solid; FONT-WEIGHT: normal; FONT-STYLE: italic; BORDER-LEFT: #c1c1c1 0px solid; BACKGROUND-COLOR: #ffffff
+}
+.dataempty {
+	FONT-SIZE: x-small; BORDER-TOP: #c1c1c1 0px solid; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; BORDER-RIGHT: #c1c1c1 1px solid; BORDER-BOTTOM: #c1c1c1 1px solid; FONT-WEIGHT: normal; FONT-STYLE: normal; BORDER-LEFT: #c1c1c1 0px solid; BACKGROUND-COLOR: #ffffff
+}
+.datafixed {
+	FONT-SIZE: x-small; BORDER-TOP: #c1c1c1 0px solid; FONT-FAMILY: 'Courier New', Courier; BORDER-RIGHT: #c1c1c1 1px solid; BORDER-BOTTOM: #c1c1c1 1px solid; FONT-WEIGHT: normal; FONT-STYLE: normal; BORDER-LEFT: #c1c1c1 0px solid; BACKGROUND-COLOR: #ffffff
+}
+.datastrong {
+	FONT-SIZE: x-small; BORDER-TOP: #c1c1c1 0px solid; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; BORDER-RIGHT: #c1c1c1 1px solid; BORDER-BOTTOM: #c1c1c1 1px solid; FONT-WEIGHT: bold; COLOR: #000000; FONT-STYLE: normal; BORDER-LEFT: #c1c1c1 0px solid; BACKGROUND-COLOR: #ffffff
+}
+.datastrongfixed {
+	FONT-SIZE: x-small; BORDER-TOP: #c1c1c1 0px solid; FONT-FAMILY: 'Courier New', Courier, monospace; BORDER-RIGHT: #c1c1c1 1px solid; BORDER-BOTTOM: #c1c1c1 1px solid; FONT-WEIGHT: bold; COLOR: #000000; FONT-STYLE: normal; BORDER-LEFT: #c1c1c1 0px solid; BACKGROUND-COLOR: #ffffff
+}
+.date {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; WIDTH: 100%; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.document {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+A:link {
+	COLOR: #0000ff
+}
+A:visited {
+	COLOR: #800080
+}
+A:active {
+	COLOR: #800080
+}
+.errorbanner {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.errorcontent {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.errorcontentfixed {
+	FONT-SIZE: x-small; FONT-FAMILY: 'Courier New', Courier; FONT-WEIGHT: normal; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.extendedpage {
+	FONT-SIZE: x-small; BORDER-TOP: #000000 1pt solid; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; BORDER-RIGHT: #000000 1pt solid; BORDER-BOTTOM: #000000 1pt solid; FONT-WEIGHT: normal; COLOR: #112277; FONT-STYLE: italic; TEXT-ALIGN: center; BORDER-LEFT: #000000 1pt solid; BACKGROUND-COLOR: #fafbfe
+}
+.fatalbanner {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.fatalcontent {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.fatalcontentfixed {
+	FONT-SIZE: x-small; FONT-FAMILY: 'Courier New', Courier; FONT-WEIGHT: normal; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.folderaction {
+	LIST-STYLE-TYPE: none; FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; MARGIN-LEFT: 6pt
+}
+.footer {
+	FONT-SIZE: x-small; BORDER-TOP: #b0b7bb 0px solid; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; BORDER-RIGHT: #b0b7bb 1px solid; BORDER-BOTTOM: #b0b7bb 1px solid; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BORDER-LEFT: #b0b7bb 0px solid; BACKGROUND-COLOR: #edf2f9
+}
+.footeremphasis {
+	FONT-SIZE: x-small; BORDER-TOP: #b0b7bb 0px solid; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; BORDER-RIGHT: #b0b7bb 1px solid; BORDER-BOTTOM: #b0b7bb 1px solid; FONT-WEIGHT: normal; COLOR: #112277; FONT-STYLE: italic; BORDER-LEFT: #b0b7bb 0px solid; BACKGROUND-COLOR: #edf2f9
+}
+.footeremphasisfixed {
+	FONT-SIZE: x-small; BORDER-TOP: #b0b7bb 0px solid; FONT-FAMILY: 'Courier New', Courier, monospace; BORDER-RIGHT: #b0b7bb 1px solid; BORDER-BOTTOM: #b0b7bb 1px solid; FONT-WEIGHT: normal; COLOR: #112277; FONT-STYLE: italic; BORDER-LEFT: #b0b7bb 0px solid; BACKGROUND-COLOR: #edf2f9
+}
+.footerempty {
+	FONT-SIZE: x-small; BORDER-TOP: #b0b7bb 0px solid; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; BORDER-RIGHT: #b0b7bb 1px solid; BORDER-BOTTOM: #b0b7bb 1px solid; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BORDER-LEFT: #b0b7bb 0px solid; BACKGROUND-COLOR: #edf2f9
+}
+.footerfixed {
+	FONT-SIZE: x-small; BORDER-TOP: #b0b7bb 0px solid; FONT-FAMILY: 'Courier New', Courier; BORDER-RIGHT: #b0b7bb 1px solid; BORDER-BOTTOM: #b0b7bb 1px solid; FONT-WEIGHT: normal; COLOR: #112277; FONT-STYLE: normal; BORDER-LEFT: #b0b7bb 0px solid; BACKGROUND-COLOR: #edf2f9
+}
+.footerstrong {
+	FONT-SIZE: x-small; BORDER-TOP: #b0b7bb 0px solid; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; BORDER-RIGHT: #b0b7bb 1px solid; BORDER-BOTTOM: #b0b7bb 1px solid; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BORDER-LEFT: #b0b7bb 0px solid; BACKGROUND-COLOR: #edf2f9
+}
+.footerstrongfixed {
+	FONT-SIZE: x-small; BORDER-TOP: #b0b7bb 0px solid; FONT-FAMILY: 'Courier New', Courier, monospace; BORDER-RIGHT: #b0b7bb 1px solid; BORDER-BOTTOM: #b0b7bb 1px solid; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BORDER-LEFT: #b0b7bb 0px solid; BACKGROUND-COLOR: #edf2f9
+}
+.frame {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.graph {
+	FONT-SIZE: x-small; BORDER-TOP: #c1c1c1 1px solid; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; BORDER-RIGHT: #c1c1c1 1px solid; BORDER-COLLAPSE: separate; BORDER-BOTTOM: #c1c1c1 1px solid; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; BORDER-SPACING: 1px; BORDER-LEFT: #c1c1c1 1px solid; BACKGROUND-COLOR: #fafbfe
+}
+.header {
+	FONT-SIZE: x-small; BORDER-TOP: #b0b7bb 0px solid; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; BORDER-RIGHT: #b0b7bb 1px solid; BORDER-BOTTOM: #b0b7bb 1px solid; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BORDER-LEFT: #b0b7bb 0px solid; BACKGROUND-COLOR: #edf2f9
+}
+.headeremphasis {
+	FONT-SIZE: x-small; BORDER-TOP: #b0b7bb 0px solid; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; BORDER-RIGHT: #b0b7bb 1px solid; BORDER-BOTTOM: #b0b7bb 1px solid; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: italic; BORDER-LEFT: #b0b7bb 0px solid; BACKGROUND-COLOR: #d8dbd3
+}
+.headeremphasisfixed {
+	FONT-SIZE: x-small; BORDER-TOP: #b0b7bb 0px solid; FONT-FAMILY: 'Courier New', Courier, monospace; BORDER-RIGHT: #b0b7bb 1px solid; BORDER-BOTTOM: #b0b7bb 1px solid; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: italic; BORDER-LEFT: #b0b7bb 0px solid; BACKGROUND-COLOR: #d8dbd3
+}
+.headerempty {
+	FONT-SIZE: x-small; BORDER-TOP: #b0b7bb 0px solid; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; BORDER-RIGHT: #b0b7bb 1px solid; BORDER-BOTTOM: #b0b7bb 1px solid; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BORDER-LEFT: #b0b7bb 0px solid; BACKGROUND-COLOR: #edf2f9
+}
+.headerfixed {
+	FONT-SIZE: x-small; BORDER-TOP: #b0b7bb 0px solid; FONT-FAMILY: 'Courier New', Courier; BORDER-RIGHT: #b0b7bb 1px solid; BORDER-BOTTOM: #b0b7bb 1px solid; FONT-WEIGHT: normal; COLOR: #112277; FONT-STYLE: normal; BORDER-LEFT: #b0b7bb 0px solid; BACKGROUND-COLOR: #edf2f9
+}
+.headersandfooters {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: bold; COLOR: #000000; FONT-STYLE: normal; BACKGROUND-COLOR: #edf2f9
+}
+.headerstrong {
+	FONT-SIZE: x-small; BORDER-TOP: #b0b7bb 0px solid; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; BORDER-RIGHT: #b0b7bb 1px solid; BORDER-BOTTOM: #b0b7bb 1px solid; FONT-WEIGHT: bold; COLOR: #000000; FONT-STYLE: normal; BORDER-LEFT: #b0b7bb 0px solid; BACKGROUND-COLOR: #d8dbd3
+}
+.headerstrongfixed {
+	FONT-SIZE: x-small; BORDER-TOP: #b0b7bb 0px solid; FONT-FAMILY: 'Courier New', Courier, monospace; BORDER-RIGHT: #b0b7bb 1px solid; BORDER-BOTTOM: #b0b7bb 1px solid; FONT-WEIGHT: bold; COLOR: #000000; FONT-STYLE: normal; BORDER-LEFT: #b0b7bb 0px solid; BACKGROUND-COLOR: #d8dbd3
+}
+.index {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.indexaction {
+	LIST-STYLE-TYPE: none; FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; MARGIN-LEFT: 6pt
+}
+.indexitem {
+	LIST-STYLE-TYPE: none; FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; MARGIN-LEFT: 6pt
+}
+.indexprocname {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.indextitle {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: italic; BACKGROUND-COLOR: #fafbfe
+}
+.layoutcontainer {
+	BORDER-TOP: #000000 0px solid; BORDER-RIGHT: #000000 0px solid; BORDER-BOTTOM: #000000 0px solid; BORDER-SPACING: 30px; BORDER-LEFT: #000000 0px solid
+}
+.layoutregion {
+	BORDER-TOP: #000000 0px solid; BORDER-RIGHT: #000000 0px solid; BORDER-BOTTOM: #000000 0px solid; BORDER-SPACING: 30px; BORDER-LEFT: #000000 0px solid
+}
+.linecontent {
+	FONT-SIZE: x-small; BORDER-TOP: #c1c1c1 0px solid; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; BORDER-RIGHT: #c1c1c1 1px solid; BORDER-BOTTOM: #c1c1c1 1px solid; FONT-WEIGHT: normal; COLOR: #112277; FONT-STYLE: normal; BORDER-LEFT: #c1c1c1 0px solid; BACKGROUND-COLOR: #fafbfe
+}
+.list {
+	LIST-STYLE-TYPE: disc; FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.list10 {
+	LIST-STYLE-TYPE: square; FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.list2 {
+	LIST-STYLE-TYPE: circle; FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.list3 {
+	LIST-STYLE-TYPE: square; FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.list4 {
+	LIST-STYLE-TYPE: square; FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.list5 {
+	LIST-STYLE-TYPE: square; FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.list6 {
+	LIST-STYLE-TYPE: square; FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.list7 {
+	LIST-STYLE-TYPE: square; FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.list8 {
+	LIST-STYLE-TYPE: square; FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.list9 {
+	LIST-STYLE-TYPE: square; FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.listitem {
+	LIST-STYLE-TYPE: disc; FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.listitem10 {
+	LIST-STYLE-TYPE: square; FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.listitem2 {
+	LIST-STYLE-TYPE: circle; FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.listitem3 {
+	LIST-STYLE-TYPE: square; FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.listitem4 {
+	LIST-STYLE-TYPE: square; FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.listitem5 {
+	LIST-STYLE-TYPE: square; FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.listitem6 {
+	LIST-STYLE-TYPE: square; FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.listitem7 {
+	LIST-STYLE-TYPE: square; FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.listitem8 {
+	LIST-STYLE-TYPE: square; FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.listitem9 {
+	LIST-STYLE-TYPE: square; FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.note {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.notebanner {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.notecontent {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.notecontentfixed {
+	FONT-SIZE: x-small; FONT-FAMILY: 'Courier New', Courier; FONT-WEIGHT: normal; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.output {
+	FONT-SIZE: x-small; BORDER-TOP: #c1c1c1 1px solid; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; BORDER-RIGHT: #c1c1c1 1px solid; BORDER-COLLAPSE: separate; BORDER-BOTTOM: #c1c1c1 1px solid; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; BORDER-SPACING: 1px; BORDER-LEFT: #c1c1c1 1px solid; BACKGROUND-COLOR: #fafbfe
+}
+.pageno {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; VERTICAL-ALIGN: top; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; TEXT-ALIGN: right; BORDER-SPACING: 0px; BACKGROUND-COLOR: #fafbfe
+}
+.pages {
+	LIST-STYLE-TYPE: decimal; FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; MARGIN-LEFT: 8px; BACKGROUND-COLOR: #fafbfe; MARGIN-RIGHT: 8px
+}
+.pagesdate {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; WIDTH: 100%; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.pagesitem {
+	LIST-STYLE-TYPE: none; FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; MARGIN-LEFT: 6pt
+}
+.pagesproclabel {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.pagesprocname {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.pagestitle {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: italic; BACKGROUND-COLOR: #fafbfe
+}
+.paragraph {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.parskip {
+	FONT-SIZE: x-small; BORDER-TOP: #000000 0px solid; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; BORDER-RIGHT: #000000 0px solid; BORDER-BOTTOM: #000000 0px solid; FONT-WEIGHT: bold; FONT-STYLE: normal; BORDER-SPACING: 0px; BORDER-LEFT: #000000 0px solid
+}
+.prepage {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #112277; FONT-STYLE: normal; TEXT-ALIGN: left; BACKGROUND-COLOR: #fafbfe
+}
+.proctitle {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.proctitlefixed {
+	FONT-SIZE: x-small; FONT-FAMILY: 'Courier New', Courier, monospace; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.rowfooter {
+	FONT-SIZE: x-small; BORDER-TOP: #b0b7bb 0px solid; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; BORDER-RIGHT: #b0b7bb 1px solid; BORDER-BOTTOM: #b0b7bb 1px solid; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BORDER-LEFT: #b0b7bb 0px solid; BACKGROUND-COLOR: #edf2f9
+}
+.rowfooteremphasis {
+	FONT-SIZE: x-small; BORDER-TOP: #b0b7bb 0px solid; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; BORDER-RIGHT: #b0b7bb 1px solid; BORDER-BOTTOM: #b0b7bb 1px solid; FONT-WEIGHT: normal; COLOR: #112277; FONT-STYLE: italic; BORDER-LEFT: #b0b7bb 0px solid; BACKGROUND-COLOR: #edf2f9
+}
+.rowfooteremphasisfixed {
+	FONT-SIZE: x-small; BORDER-TOP: #b0b7bb 0px solid; FONT-FAMILY: 'Courier New', Courier, monospace; BORDER-RIGHT: #b0b7bb 1px solid; BORDER-BOTTOM: #b0b7bb 1px solid; FONT-WEIGHT: normal; COLOR: #112277; FONT-STYLE: italic; BORDER-LEFT: #b0b7bb 0px solid; BACKGROUND-COLOR: #edf2f9
+}
+.rowfooterempty {
+	FONT-SIZE: x-small; BORDER-TOP: #b0b7bb 0px solid; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; BORDER-RIGHT: #b0b7bb 1px solid; BORDER-BOTTOM: #b0b7bb 1px solid; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BORDER-LEFT: #b0b7bb 0px solid; BACKGROUND-COLOR: #edf2f9
+}
+.rowfooterfixed {
+	FONT-SIZE: x-small; BORDER-TOP: #b0b7bb 0px solid; FONT-FAMILY: 'Courier New', Courier; BORDER-RIGHT: #b0b7bb 1px solid; BORDER-BOTTOM: #b0b7bb 1px solid; FONT-WEIGHT: normal; COLOR: #112277; FONT-STYLE: normal; BORDER-LEFT: #b0b7bb 0px solid; BACKGROUND-COLOR: #edf2f9
+}
+.rowfooterstrong {
+	FONT-SIZE: x-small; BORDER-TOP: #b0b7bb 0px solid; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; BORDER-RIGHT: #b0b7bb 1px solid; BORDER-BOTTOM: #b0b7bb 1px solid; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BORDER-LEFT: #b0b7bb 0px solid; BACKGROUND-COLOR: #edf2f9
+}
+.rowfooterstrongfixed {
+	FONT-SIZE: x-small; BORDER-TOP: #b0b7bb 0px solid; FONT-FAMILY: 'Courier New', Courier, monospace; BORDER-RIGHT: #b0b7bb 1px solid; BORDER-BOTTOM: #b0b7bb 1px solid; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BORDER-LEFT: #b0b7bb 0px solid; BACKGROUND-COLOR: #edf2f9
+}
+.rowheader {
+	FONT-SIZE: x-small; BORDER-TOP: #b0b7bb 0px solid; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; BORDER-RIGHT: #b0b7bb 1px solid; BORDER-BOTTOM: #b0b7bb 1px solid; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BORDER-LEFT: #b0b7bb 0px solid; BACKGROUND-COLOR: #edf2f9
+}
+.rowheaderemphasis {
+	FONT-SIZE: x-small; BORDER-TOP: #b0b7bb 0px solid; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; BORDER-RIGHT: #b0b7bb 1px solid; BORDER-BOTTOM: #b0b7bb 1px solid; FONT-WEIGHT: normal; COLOR: #112277; FONT-STYLE: italic; BORDER-LEFT: #b0b7bb 0px solid; BACKGROUND-COLOR: #edf2f9
+}
+.rowheaderemphasisfixed {
+	FONT-SIZE: x-small; BORDER-TOP: #b0b7bb 0px solid; FONT-FAMILY: 'Courier New', Courier, monospace; BORDER-RIGHT: #b0b7bb 1px solid; BORDER-BOTTOM: #b0b7bb 1px solid; FONT-WEIGHT: normal; COLOR: #112277; FONT-STYLE: italic; BORDER-LEFT: #b0b7bb 0px solid; BACKGROUND-COLOR: #edf2f9
+}
+.rowheaderempty {
+	FONT-SIZE: x-small; BORDER-TOP: #b0b7bb 0px solid; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; BORDER-RIGHT: #b0b7bb 1px solid; BORDER-BOTTOM: #b0b7bb 1px solid; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BORDER-LEFT: #b0b7bb 0px solid; BACKGROUND-COLOR: #edf2f9
+}
+.rowheaderfixed {
+	FONT-SIZE: x-small; BORDER-TOP: #b0b7bb 0px solid; FONT-FAMILY: 'Courier New', Courier; BORDER-RIGHT: #b0b7bb 1px solid; BORDER-BOTTOM: #b0b7bb 1px solid; FONT-WEIGHT: normal; COLOR: #112277; FONT-STYLE: normal; BORDER-LEFT: #b0b7bb 0px solid; BACKGROUND-COLOR: #edf2f9
+}
+.rowheaderstrong {
+	FONT-SIZE: x-small; BORDER-TOP: #b0b7bb 0px solid; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; BORDER-RIGHT: #b0b7bb 1px solid; BORDER-BOTTOM: #b0b7bb 1px solid; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BORDER-LEFT: #b0b7bb 0px solid; BACKGROUND-COLOR: #edf2f9
+}
+.rowheaderstrongfixed {
+	FONT-SIZE: x-small; BORDER-TOP: #b0b7bb 0px solid; FONT-FAMILY: 'Courier New', Courier, monospace; BORDER-RIGHT: #b0b7bb 1px solid; BORDER-BOTTOM: #b0b7bb 1px solid; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BORDER-LEFT: #b0b7bb 0px solid; BACKGROUND-COLOR: #edf2f9
+}
+.systemfooter {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.systemfooter10 {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.systemfooter2 {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.systemfooter3 {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.systemfooter4 {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.systemfooter5 {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.systemfooter6 {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.systemfooter7 {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.systemfooter8 {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.systemfooter9 {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.systemtitle {
+	FONT-SIZE: small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.systemtitle10 {
+	FONT-SIZE: small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.systemtitle2 {
+	FONT-SIZE: small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.systemtitle3 {
+	FONT-SIZE: small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.systemtitle4 {
+	FONT-SIZE: small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.systemtitle5 {
+	FONT-SIZE: small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.systemtitle6 {
+	FONT-SIZE: small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.systemtitle7 {
+	FONT-SIZE: small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.systemtitle8 {
+	FONT-SIZE: small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.systemtitle9 {
+	FONT-SIZE: small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.systitleandfootercontainer {
+	FONT-SIZE: x-small; BORDER-TOP: #000000 0px solid; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; BORDER-RIGHT: #000000 0px solid; WIDTH: 100%; BORDER-BOTTOM: #000000 0px solid; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; BORDER-SPACING: 1px; BORDER-LEFT: #000000 0px solid; BACKGROUND-COLOR: #fafbfe
+}
+.table {
+	BORDER-TOP: #c1c1c1 1px solid; BORDER-RIGHT: #c1c1c1 0px solid; BORDER-COLLAPSE: collapse; BORDER-BOTTOM: #c1c1c1 0px solid; BORDER-SPACING: 0px; BORDER-LEFT: #c1c1c1 1px solid
+}
+.top_stacked_value {
+	BORDER-TOP: 0px; BORDER-RIGHT: 0px; BORDER-BOTTOM: 0px; PADDING-BOTTOM: 1px; BORDER-LEFT: 0px
+}
+.middle_stacked_value {
+	BORDER-TOP: 0px; BORDER-RIGHT: 0px; BORDER-BOTTOM: 0px; PADDING-BOTTOM: 1px; PADDING-TOP: 1px; BORDER-LEFT: 0px
+}
+.bottom_stacked_value {
+	BORDER-TOP: 0px; BORDER-RIGHT: 0px; BORDER-BOTTOM: 0px; PADDING-TOP: 1px; BORDER-LEFT: 0px
+}
+.titleandnotecontainer {
+	FONT-SIZE: x-small; BORDER-TOP: #000000 0px solid; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; BORDER-RIGHT: #000000 0px solid; WIDTH: 100%; BORDER-BOTTOM: #000000 0px solid; FONT-WEIGHT: normal; COLOR: #000000; FONT-STYLE: normal; BORDER-SPACING: 1px; BORDER-LEFT: #000000 0px solid; BACKGROUND-COLOR: #fafbfe
+}
+.titlesandfooters {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.usertext {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.warnbanner {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: bold; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.warncontent {
+	FONT-SIZE: x-small; FONT-FAMILY: Arial, 'Albany AMT', Helvetica, Helv; FONT-WEIGHT: normal; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.warncontentfixed {
+	FONT-SIZE: x-small; FONT-FAMILY: 'Courier New', Courier; FONT-WEIGHT: normal; COLOR: #112277; FONT-STYLE: normal; BACKGROUND-COLOR: #fafbfe
+}
+.l {
+	TEXT-ALIGN: left
+}
+.c {
+	TEXT-ALIGN: center
+}
+.r {
+	TEXT-ALIGN: right
+}
+.d {
+	TEXT-ALIGN: right
+}
+.j {
+	TEXT-ALIGN: justify
+}
+.t {
+	VERTICAL-ALIGN: top
+}
+.m {
+	VERTICAL-ALIGN: middle
+}
+.b {
+	VERTICAL-ALIGN: bottom
+}
+TD {
+	VERTICAL-ALIGN: top
+}
+TH {
+	VERTICAL-ALIGN: top
+}
+.stacked_cell {
+	PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px
+}
+</STYLE>
+
+<SCRIPT language=javascript type=text/javascript>
+<!-- 
+function startup(){
+
+}
+function shutdown(){
+
+}
+
+//-->
+</SCRIPT>
+</HEAD>
+<BODY class=body onload=startup() onunload=shutdown()>
+<SCRIPT language=javascript type=text/javascript>
+<!-- 
+var _info = navigator.userAgent
+var _ie = (_info.indexOf("MSIE") > 0
+          && _info.indexOf("Win") > 0
+          && _info.indexOf("Windows 3.1") < 0);
+var _ie64 = _info.indexOf("x64") > 0
+
+//-->
+</SCRIPT>
+
+<DIV class=branch><A name=IDX></A>
+<TABLE class=systitleandfootercontainer cellSpacing=1 cellPadding=1 rules=none 
+width="100%" summary="Page Layout" border=0 frame=void>
+  <TBODY>
+  <TR>
+    <TD class="c systemtitle">PARCELA SUBDIVIDIDA E 
+VARIAÇÕES</TD></TR></TBODY></TABLE><BR>
+<DIV class="c proctitle">The GLM Procedure</DIV>
+<P>
+<DIV>
+<DIV align=center>
+<TABLE class=table borderColor=#c1c1c1 cellSpacing=0 cellPadding=5 rules=all 
+summary="Procedure GLM: Class Levels" frame=box>
+  <COLGROUP>
+  <COL></COLGROUP>
+  <COLGROUP>
+  <COL>
+  <COL></COLGROUP>
+  <THEAD>
+  <TR>
+    <TH class="c b header" colSpan=3 scope=colgroup>Class Level 
+  Information</TH></TR>
+  <TR>
+    <TH class="l b header" scope=col>Class</TH>
+    <TH class="r b header" scope=col>Levels</TH>
+    <TH class="l b header" scope=col>Values</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TH class="l rowheader" scope=row>FAM</TH>
+    <TD class="r data">5</TD>
+    <TD class="l data">1 2 3 4 5</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>MICRO</TH>
+    <TD class="r data">2</TD>
+    <TD class="l data">NÃO SIM</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>BLOCO</TH>
+    <TD class="r data">4</TD>
+    <TD class="l data">1 2 3 4</TD></TR></TBODY></TABLE></DIV></DIV><BR><A 
+name=IDX1></A>
+<DIV>
+<DIV align=center>
+<TABLE class=table borderColor=#c1c1c1 cellSpacing=0 cellPadding=5 rules=all 
+summary="Procedure GLM: Number of Observations" frame=box>
+  <COLGROUP>
+  <COL>
+  <COL></COLGROUP>
+  <TBODY>
+  <TR>
+    <TH class="l rowheader" scope=row>Number of Observations Read</TH>
+    <TD class="r data">40</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>Number of Observations Used</TH>
+    <TD class="r data">40</TD></TR></TBODY></TABLE></DIV></DIV><BR>
+<P style="PAGE-BREAK-AFTER: always"><BR></P>
+<HR SIZE=3>
+<A name=IDX2></A>
+<TABLE class=systitleandfootercontainer cellSpacing=1 cellPadding=1 rules=none 
+width="100%" summary="Page Layout" border=0 frame=void>
+  <TBODY>
+  <TR>
+    <TD class="c systemtitle">PARCELA SUBDIVIDIDA E 
+VARIAÇÕES</TD></TR></TBODY></TABLE><BR>
+<DIV class="c proctitle">The GLM Procedure</DIV>
+<DIV class="c proctitle">&nbsp;</DIV>
+<DIV class="l proctitle">Dependent Variable: RESP </DIV>
+<P>
+<DIV>
+<DIV align=center>
+<TABLE class=table borderColor=#c1c1c1 cellSpacing=0 cellPadding=5 rules=all 
+summary="Procedure GLM: Overall ANOVA" frame=box>
+  <COLGROUP>
+  <COL></COLGROUP>
+  <COLGROUP>
+  <COL>
+  <COL>
+  <COL>
+  <COL>
+  <COL></COLGROUP>
+  <THEAD>
+  <TR>
+    <TH class="l b header" scope=col>Source</TH>
+    <TH class="r b header" scope=col>DF</TH>
+    <TH class="r b header" scope=col>Sum of Squares</TH>
+    <TH class="r b header" scope=col>Mean Square</TH>
+    <TH class="r b header" scope=col>F Value</TH>
+    <TH class="r b header" scope=col>Pr&nbsp;&gt;&nbsp;F</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TH class="l rowheader" scope=row>Model</TH>
+    <TD class="r data">24</TD>
+    <TD class="r data">16042.35000</TD>
+    <TD class="r data">668.43125</TD>
+    <TD class="r data">756.71</TD>
+    <TD class="r data">&lt;.0001</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>Error</TH>
+    <TD class="r data">15</TD>
+    <TD class="r data">13.25000</TD>
+    <TD class="r data">0.88333</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TD class="r data">&nbsp;</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>Corrected Total</TH>
+    <TD class="r data">39</TD>
+    <TD class="r data">16055.60000</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TD class="r data">&nbsp;</TD></TR></TBODY></TABLE></DIV></DIV><BR><A 
+name=IDX3></A>
+<DIV>
+<DIV align=center>
+<TABLE class=table borderColor=#c1c1c1 cellSpacing=0 cellPadding=5 rules=all 
+summary="Procedure GLM: Fit Statistics" frame=box>
+  <COLGROUP>
+  <COL>
+  <COL>
+  <COL>
+  <COL></COLGROUP>
+  <THEAD>
+  <TR>
+    <TH class="r b header" scope=col>R-Square</TH>
+    <TH class="r b header" scope=col>Coeff Var</TH>
+    <TH class="r b header" scope=col>Root MSE</TH>
+    <TH class="r b header" scope=col>RESP&nbsp;Mean</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="r data">0.999175</TD>
+    <TD class="r data">1.364090</TD>
+    <TD class="r data">0.939858</TD>
+    <TD class="r data">68.90000</TD></TR></TBODY></TABLE></DIV></DIV><BR><A 
+name=IDX4></A>
+<DIV>
+<DIV align=center>
+<TABLE class=table borderColor=#c1c1c1 cellSpacing=0 cellPadding=5 rules=all 
+summary="Procedure GLM: Type I Model ANOVA" frame=box>
+  <COLGROUP>
+  <COL></COLGROUP>
+  <COLGROUP>
+  <COL>
+  <COL>
+  <COL>
+  <COL>
+  <COL></COLGROUP>
+  <THEAD>
+  <TR>
+    <TH class="l b header" scope=col>Source</TH>
+    <TH class="r b header" scope=col>DF</TH>
+    <TH class="r b header" scope=col>Type I SS</TH>
+    <TH class="r b header" scope=col>Mean Square</TH>
+    <TH class="r b header" scope=col>F Value</TH>
+    <TH class="r b header" scope=col>Pr&nbsp;&gt;&nbsp;F</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TH class="l rowheader" scope=row>BLOCO</TH>
+    <TD class="r data">3</TD>
+    <TD class="r data">7437.600000</TD>
+    <TD class="r data">2479.200000</TD>
+    <TD class="r data">2806.64</TD>
+    <TD class="r data">&lt;.0001</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>FAM</TH>
+    <TD class="r data">4</TD>
+    <TD class="r data">7170.350000</TD>
+    <TD class="r data">1792.587500</TD>
+    <TD class="r data">2029.34</TD>
+    <TD class="r data">&lt;.0001</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>FAM*BLOCO</TH>
+    <TD class="r data">12</TD>
+    <TD class="r data">305.650000</TD>
+    <TD class="r data">25.470833</TD>
+    <TD class="r data">28.83</TD>
+    <TD class="r data">&lt;.0001</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>MICRO</TH>
+    <TD class="r data">1</TD>
+    <TD class="r data">462.400000</TD>
+    <TD class="r data">462.400000</TD>
+    <TD class="r data">523.47</TD>
+    <TD class="r data">&lt;.0001</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>FAM*MICRO</TH>
+    <TD class="r data">4</TD>
+    <TD class="r data">666.350000</TD>
+    <TD class="r data">166.587500</TD>
+    <TD class="r data">188.59</TD>
+    <TD class="r data">&lt;.0001</TD></TR></TBODY></TABLE></DIV></DIV><BR><A 
+name=IDX5></A>
+<DIV>
+<DIV align=center>
+<TABLE class=table borderColor=#c1c1c1 cellSpacing=0 cellPadding=5 rules=all 
+summary="Procedure GLM: Type III Model ANOVA" frame=box>
+  <COLGROUP>
+  <COL></COLGROUP>
+  <COLGROUP>
+  <COL>
+  <COL>
+  <COL>
+  <COL>
+  <COL></COLGROUP>
+  <THEAD>
+  <TR>
+    <TH class="l b header" scope=col>Source</TH>
+    <TH class="r b header" scope=col>DF</TH>
+    <TH class="r b header" scope=col>Type III SS</TH>
+    <TH class="r b header" scope=col>Mean Square</TH>
+    <TH class="r b header" scope=col>F Value</TH>
+    <TH class="r b header" scope=col>Pr&nbsp;&gt;&nbsp;F</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TH class="l rowheader" scope=row>BLOCO</TH>
+    <TD class="r data">3</TD>
+    <TD class="r data">7437.600000</TD>
+    <TD class="r data">2479.200000</TD>
+    <TD class="r data">2806.64</TD>
+    <TD class="r data">&lt;.0001</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>FAM</TH>
+    <TD class="r data">4</TD>
+    <TD class="r data">7170.350000</TD>
+    <TD class="r data">1792.587500</TD>
+    <TD class="r data">2029.34</TD>
+    <TD class="r data">&lt;.0001</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>FAM*BLOCO</TH>
+    <TD class="r data">12</TD>
+    <TD class="r data">305.650000</TD>
+    <TD class="r data">25.470833</TD>
+    <TD class="r data">28.83</TD>
+    <TD class="r data">&lt;.0001</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>MICRO</TH>
+    <TD class="r data">1</TD>
+    <TD class="r data">462.400000</TD>
+    <TD class="r data">462.400000</TD>
+    <TD class="r data">523.47</TD>
+    <TD class="r data">&lt;.0001</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>FAM*MICRO</TH>
+    <TD class="r data">4</TD>
+    <TD class="r data">666.350000</TD>
+    <TD class="r data">166.587500</TD>
+    <TD class="r data">188.59</TD>
+    <TD class="r data">&lt;.0001</TD></TR></TBODY></TABLE></DIV></DIV><BR>
+<P style="PAGE-BREAK-AFTER: always"><BR></P>
+<HR SIZE=3>
+<A name=IDX6></A>
+<TABLE class=systitleandfootercontainer cellSpacing=1 cellPadding=1 rules=none 
+width="100%" summary="Page Layout" border=0 frame=void>
+  <TBODY>
+  <TR>
+    <TD class="c systemtitle">PARCELA SUBDIVIDIDA E 
+VARIAÇÕES</TD></TR></TBODY></TABLE><BR>
+<DIV class="c proctitle">The GLM Procedure</DIV>
+<P>
+<DIV>
+<DIV align=center>
+<TABLE class=table borderColor=#c1c1c1 cellSpacing=0 cellPadding=5 rules=all 
+summary="Procedure GLM: Model Expected Mean Squares" frame=box>
+  <COLGROUP>
+  <COL></COLGROUP>
+  <COLGROUP>
+  <COL></COLGROUP>
+  <THEAD>
+  <TR>
+    <TH class="l b header" scope=col>Source</TH>
+    <TH class="l b header" scope=col>Type III Expected Mean 
+  Square</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TH class="l rowheader" scope=row>BLOCO</TH>
+    <TD class="l data">Var(Error) + 2 Var(FAM*BLOCO) + Q(BLOCO)</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>FAM</TH>
+    <TD class="l data">Var(Error) + 2 Var(FAM*BLOCO) + Q(FAM,FAM*MICRO)</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>FAM*BLOCO</TH>
+    <TD class="l data">Var(Error) + 2 Var(FAM*BLOCO)</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>MICRO</TH>
+    <TD class="l data">Var(Error) + Q(MICRO,FAM*MICRO)</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>FAM*MICRO</TH>
+    <TD class="l data">Var(Error) + 
+Q(FAM*MICRO)</TD></TR></TBODY></TABLE></DIV></DIV><BR>
+<P style="PAGE-BREAK-AFTER: always"><BR></P>
+<HR SIZE=3>
+<A name=IDX7></A>
+<TABLE class=systitleandfootercontainer cellSpacing=1 cellPadding=1 rules=none 
+width="100%" summary="Page Layout" border=0 frame=void>
+  <TBODY>
+  <TR>
+    <TD class="c systemtitle">PARCELA SUBDIVIDIDA E 
+VARIAÇÕES</TD></TR></TBODY></TABLE><BR>
+<DIV class="c proctitle">The GLM Procedure</DIV>
+<P>
+<DIV>
+<DIV align=center>
+<TABLE class=table borderColor=#c1c1c1 cellSpacing=0 cellPadding=5 rules=all 
+summary="Procedure GLM: Model Expected Mean Squares" frame=box>
+  <COLGROUP>
+  <COL></COLGROUP>
+  <COLGROUP>
+  <COL></COLGROUP>
+  <THEAD>
+  <TR>
+    <TH class="l b header" scope=col>Source</TH>
+    <TH class="l b header" scope=col>Type III Expected Mean 
+  Square</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TH class="l rowheader" scope=row>BLOCO</TH>
+    <TD class="l data">Var(Error) + 2 Var(FAM*BLOCO) + Q(BLOCO)</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>FAM</TH>
+    <TD class="l data">Var(Error) + 2 Var(FAM*BLOCO) + Q(FAM,FAM*MICRO)</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>FAM*BLOCO</TH>
+    <TD class="l data">Var(Error) + 2 Var(FAM*BLOCO)</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>MICRO</TH>
+    <TD class="l data">Var(Error) + Q(MICRO,FAM*MICRO)</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>FAM*MICRO</TH>
+    <TD class="l data">Var(Error) + 
+Q(FAM*MICRO)</TD></TR></TBODY></TABLE></DIV></DIV><BR>
+<P style="PAGE-BREAK-AFTER: always"><BR></P>
+<HR SIZE=3>
+<A name=IDX8></A>
+<TABLE class=systitleandfootercontainer cellSpacing=1 cellPadding=1 rules=none 
+width="100%" summary="Page Layout" border=0 frame=void>
+  <TBODY>
+  <TR>
+    <TD class="c systemtitle">PARCELA SUBDIVIDIDA E 
+VARIAÇÕES</TD></TR></TBODY></TABLE><BR>
+<DIV class="c proctitle">The GLM Procedure</DIV>
+<DIV class="c proctitle">Tests of Hypotheses for Mixed Model Analysis of 
+Variance</DIV>
+<DIV class="c proctitle">&nbsp;</DIV>
+<DIV class="l proctitle">Dependent Variable: RESP </DIV>
+<P>
+<DIV>
+<DIV align=center>
+<TABLE class=table borderColor=#c1c1c1 cellSpacing=0 cellPadding=5 rules=all 
+summary="Procedure GLM: Type III Model ANOVA" frame=box>
+  <COLGROUP>
+  <COL>
+  <COL></COLGROUP>
+  <COLGROUP>
+  <COL>
+  <COL>
+  <COL>
+  <COL>
+  <COL></COLGROUP>
+  <THEAD>
+  <TR>
+    <TH class="c headerempty" scope=col>&nbsp;</TH>
+    <TH class="l b header" scope=col>Source</TH>
+    <TH class="r b header" scope=col>DF</TH>
+    <TH class="r b header" scope=col>Type III SS</TH>
+    <TH class="r b header" scope=col>Mean Square</TH>
+    <TH class="r b header" scope=col>F Value</TH>
+    <TH class="r b header" scope=col>Pr&nbsp;&gt;&nbsp;F</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="r data">&nbsp;</TD>
+    <TH class="l rowheader" scope=row>BLOCO</TH>
+    <TD class="r data">3</TD>
+    <TD class="r data">7437.600000</TD>
+    <TD class="r data">2479.200000</TD>
+    <TD class="r data">97.33</TD>
+    <TD class="r data">&lt;.0001</TD></TR>
+  <TR>
+    <TD class="r data">*</TD>
+    <TH class="l rowheader" scope=row>FAM</TH>
+    <TD class="r data">4</TD>
+    <TD class="r data">7170.350000</TD>
+    <TD class="r data">1792.587500</TD>
+    <TD class="r data">70.38</TD>
+    <TD class="r data">&lt;.0001</TD></TR>
+  <TR>
+    <TD class="r data">&nbsp;</TD>
+    <TH class="l rowheader" scope=row>Error: MS(FAM*BLOCO)</TH>
+    <TD class="r data">12</TD>
+    <TD class="r data">305.650000</TD>
+    <TD class="r data">25.470833</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TD class="r data">&nbsp;</TD></TR></TBODY>
+  <TFOOT>
+  <TR>
+    <TH class="l b footer" 
+      colSpan=7>*&nbsp;This&nbsp;test&nbsp;assumes&nbsp;one&nbsp;or&nbsp;more&nbsp;other&nbsp;fixed&nbsp;effects&nbsp;are&nbsp;zero.</TH></TR></TFOOT></TABLE></DIV></DIV><BR><A 
+name=IDX9></A>
+<DIV>
+<DIV align=center>
+<TABLE class=table borderColor=#c1c1c1 cellSpacing=0 cellPadding=5 rules=all 
+summary="Procedure GLM: Type III Model ANOVA" frame=box>
+  <COLGROUP>
+  <COL>
+  <COL></COLGROUP>
+  <COLGROUP>
+  <COL>
+  <COL>
+  <COL>
+  <COL>
+  <COL></COLGROUP>
+  <THEAD>
+  <TR>
+    <TH class="c headerempty" scope=col>&nbsp;</TH>
+    <TH class="l b header" scope=col>Source</TH>
+    <TH class="r b header" scope=col>DF</TH>
+    <TH class="r b header" scope=col>Type III SS</TH>
+    <TH class="r b header" scope=col>Mean Square</TH>
+    <TH class="r b header" scope=col>F Value</TH>
+    <TH class="r b header" scope=col>Pr&nbsp;&gt;&nbsp;F</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="r data">&nbsp;</TD>
+    <TH class="l rowheader" scope=row>FAM*BLOCO</TH>
+    <TD class="r data">12</TD>
+    <TD class="r data">305.650000</TD>
+    <TD class="r data">25.470833</TD>
+    <TD class="r data">28.83</TD>
+    <TD class="r data">&lt;.0001</TD></TR>
+  <TR>
+    <TD class="r data">*</TD>
+    <TH class="l rowheader" scope=row>MICRO</TH>
+    <TD class="r data">1</TD>
+    <TD class="r data">462.400000</TD>
+    <TD class="r data">462.400000</TD>
+    <TD class="r data">523.47</TD>
+    <TD class="r data">&lt;.0001</TD></TR>
+  <TR>
+    <TD class="r data">&nbsp;</TD>
+    <TH class="l rowheader" scope=row>FAM*MICRO</TH>
+    <TD class="r data">4</TD>
+    <TD class="r data">666.350000</TD>
+    <TD class="r data">166.587500</TD>
+    <TD class="r data">188.59</TD>
+    <TD class="r data">&lt;.0001</TD></TR>
+  <TR>
+    <TD class="r data">&nbsp;</TD>
+    <TH class="l rowheader" scope=row>Error: MS(Error)</TH>
+    <TD class="r data">15</TD>
+    <TD class="r data">13.250000</TD>
+    <TD class="r data">0.883333</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TD class="r data">&nbsp;</TD></TR></TBODY>
+  <TFOOT>
+  <TR>
+    <TH class="l b footer" 
+      colSpan=7>*&nbsp;This&nbsp;test&nbsp;assumes&nbsp;one&nbsp;or&nbsp;more&nbsp;other&nbsp;fixed&nbsp;effects&nbsp;are&nbsp;zero.</TH></TR></TFOOT></TABLE></DIV></DIV><BR>
+<P style="PAGE-BREAK-AFTER: always"><BR></P>
+<HR SIZE=3>
+<A name=IDX10></A>
+<TABLE class=systitleandfootercontainer cellSpacing=1 cellPadding=1 rules=none 
+width="100%" summary="Page Layout" border=0 frame=void>
+  <TBODY>
+  <TR>
+    <TD class="c systemtitle">PARCELA SUBDIVIDIDA E 
+VARIAÇÕES</TD></TR></TBODY></TABLE><BR>
+<DIV>
+<DIV class=c><IMG class=c style="HEIGHT: 480px; WIDTH: 640px" border=0 
+alt="Distribution of RESP by FAM" 
+src="SAS%20Output_htm%23IDX29_arquivos/BoxPlot.png"> </DIV></DIV><BR>
+<P style="PAGE-BREAK-AFTER: always"><BR></P>
+<HR SIZE=3>
+<A name=IDX11></A>
+<TABLE class=systitleandfootercontainer cellSpacing=1 cellPadding=1 rules=none 
+width="100%" summary="Page Layout" border=0 frame=void>
+  <TBODY>
+  <TR>
+    <TD class="c systemtitle">PARCELA SUBDIVIDIDA E 
+VARIAÇÕES</TD></TR></TBODY></TABLE><BR>
+<DIV class="c proctitle">&nbsp;</DIV>
+<DIV class="c proctitle">&nbsp;</DIV>
+<DIV class="c proctitle">t Tests (LSD) for RESP</DIV>
+<P><BR>
+<P>
+<DIV align=center>
+<TABLE class=notecontent>
+  <TBODY>
+  <TR>
+    <TD class="c notebanner">Note:</TD>
+    <TD class="l notecontent">This test controls the Type I comparisonwise 
+      error rate, not the experimentwise error rate.</TD></TR></TBODY></TABLE></DIV>
+<P>
+<DIV>
+<DIV align=center>
+<TABLE class=table borderColor=#c1c1c1 cellSpacing=0 cellPadding=5 rules=all 
+summary="Procedure GLM: Information" frame=box>
+  <COLGROUP>
+  <COL>
+  <COL></COLGROUP>
+  <TBODY>
+  <TR>
+    <TH class="l rowheader" scope=row>Alpha</TH>
+    <TD class="r data">0.05</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>Error Degrees of Freedom</TH>
+    <TD class="r data">12</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>Error Mean Square</TH>
+    <TD class="r data">25.47083</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>Critical Value of t</TH>
+    <TD class="r data">2.17881</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>Least Significant Difference</TH>
+    <TD class="r data">5.4981</TD></TR></TBODY></TABLE></DIV></DIV><BR><A 
+name=IDX12></A>
+<DIV>
+<DIV align=center>
+<TABLE class=table borderColor=#c1c1c1 cellSpacing=0 cellPadding=5 rules=all 
+summary="Procedure GLM: Comparisons" frame=box>
+  <COLGROUP>
+  <COL>
+  <COL>
+  <COL>
+  <COL></COLGROUP>
+  <THEAD>
+  <TR>
+    <TH class="c b header" colSpan=4 scope=colgroup>Means with the same 
+      letter<BR>are not significantly different.</TH></TR>
+  <TR>
+    <TH class="c b header" scope=col>t&nbsp;Grouping</TH>
+    <TH class="r b header" scope=col>Mean</TH>
+    <TH class="r b header" scope=col>N</TH>
+    <TH class="l b header" scope=col>FAM</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="l data">A</TD>
+    <TD class="r data">87.000</TD>
+    <TD class="r data">8</TD>
+    <TD class="l data">4</TD></TR>
+  <TR>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TD class="l data">&nbsp;</TD></TR>
+  <TR>
+    <TD class="l data">B</TD>
+    <TD class="r data">72.500</TD>
+    <TD class="r data">8</TD>
+    <TD class="l data">1</TD></TR>
+  <TR>
+    <TD class="l data">B</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TD class="l data">&nbsp;</TD></TR>
+  <TR>
+    <TD class="l data">B</TD>
+    <TD class="r data">70.375</TD>
+    <TD class="r data">8</TD>
+    <TD class="l data">2</TD></TR>
+  <TR>
+    <TD class="l data">B</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TD class="l data">&nbsp;</TD></TR>
+  <TR>
+    <TD class="l data">B</TD>
+    <TD class="r data">69.250</TD>
+    <TD class="r data">8</TD>
+    <TD class="l data">5</TD></TR>
+  <TR>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TD class="l data">&nbsp;</TD></TR>
+  <TR>
+    <TD class="l data">C</TD>
+    <TD class="r data">45.375</TD>
+    <TD class="r data">8</TD>
+    <TD class="l data">3</TD></TR></TBODY></TABLE></DIV></DIV><BR>
+<P style="PAGE-BREAK-AFTER: always"><BR></P>
+<HR SIZE=3>
+<A name=IDX13></A>
+<TABLE class=systitleandfootercontainer cellSpacing=1 cellPadding=1 rules=none 
+width="100%" summary="Page Layout" border=0 frame=void>
+  <TBODY>
+  <TR>
+    <TD class="c systemtitle">PARCELA SUBDIVIDIDA E 
+VARIAÇÕES</TD></TR></TBODY></TABLE><BR>
+<DIV class="c proctitle">&nbsp;</DIV>
+<DIV class="c proctitle">Least Squares Means</DIV>
+<P>
+<DIV>
+<DIV align=center>
+<TABLE class=table borderColor=#c1c1c1 cellSpacing=0 cellPadding=5 rules=all 
+summary="Procedure GLM: LSMeans" frame=box>
+  <COLGROUP>
+  <COL>
+  <COL></COLGROUP>
+  <COLGROUP>
+  <COL></COLGROUP>
+  <THEAD>
+  <TR>
+    <TH class="l b header" scope=col>FAM</TH>
+    <TH class="l b header" scope=col>MICRO</TH>
+    <TH class="r b header" scope=col>RESP LSMEAN</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TH class="l rowheader" scope=row>1</TH>
+    <TH class="l rowheader" scope=row>NÃO</TH>
+    <TD class="r data">67.5000000</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>1</TH>
+    <TH class="l rowheader" scope=row>SIM</TH>
+    <TD class="r data">77.5000000</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>2</TH>
+    <TH class="l rowheader" scope=row>NÃO</TH>
+    <TD class="r data">70.0000000</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>2</TH>
+    <TH class="l rowheader" scope=row>SIM</TH>
+    <TD class="r data">70.7500000</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>3</TH>
+    <TH class="l rowheader" scope=row>NÃO</TH>
+    <TD class="r data">45.0000000</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>3</TH>
+    <TH class="l rowheader" scope=row>SIM</TH>
+    <TD class="r data">45.7500000</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>4</TH>
+    <TH class="l rowheader" scope=row>NÃO</TH>
+    <TD class="r data">76.2500000</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>4</TH>
+    <TH class="l rowheader" scope=row>SIM</TH>
+    <TD class="r data">97.7500000</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>5</TH>
+    <TH class="l rowheader" scope=row>NÃO</TH>
+    <TD class="r data">68.7500000</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>5</TH>
+    <TH class="l rowheader" scope=row>SIM</TH>
+    <TD class="r data">69.7500000</TD></TR></TBODY></TABLE></DIV></DIV><BR><A 
+name=IDX14></A>
+<DIV>
+<DIV class=c><IMG class=c style="HEIGHT: 480px; WIDTH: 640px" border=0 
+alt="Plot of RESP least-squares means for FAM*MICRO." 
+src="SAS%20Output_htm%23IDX29_arquivos/MeanPlot.png"> </DIV></DIV><BR><A 
+name=IDX15></A>
+<DIV>
+<DIV class=c><IMG class=c style="HEIGHT: 480px; WIDTH: 640px" border=0 
+alt="Plot of RESP least-squares means for FAM*MICRO, sliced by FAM." 
+src="SAS%20Output_htm%23IDX29_arquivos/MeanPlot1.png"> </DIV></DIV><BR>
+<P style="PAGE-BREAK-AFTER: always"><BR></P>
+<HR SIZE=3>
+<A name=IDX16></A>
+<TABLE class=systitleandfootercontainer cellSpacing=1 cellPadding=1 rules=none 
+width="100%" summary="Page Layout" border=0 frame=void>
+  <TBODY>
+  <TR>
+    <TD class="c systemtitle">PARCELA SUBDIVIDIDA E 
+VARIAÇÕES</TD></TR></TBODY></TABLE><BR>
+<DIV class="c proctitle">&nbsp;</DIV>
+<DIV class="c proctitle">Least Squares Means</DIV>
+<P>
+<DIV>
+<DIV align=center>
+<TABLE class=table borderColor=#c1c1c1 cellSpacing=0 cellPadding=5 rules=all 
+summary="Procedure GLM: Sliced ANOVA" frame=box>
+  <COLGROUP>
+  <COL></COLGROUP>
+  <COLGROUP>
+  <COL>
+  <COL>
+  <COL>
+  <COL>
+  <COL></COLGROUP>
+  <THEAD>
+  <TR>
+    <TH class="c b header" colSpan=6 scope=colgroup>FAM*MICRO Effect Sliced by 
+      FAM for RESP</TH></TR>
+  <TR>
+    <TH class="l b header" scope=col>FAM</TH>
+    <TH class="r b header" scope=col>DF</TH>
+    <TH class="r b header" scope=col>Sum of Squares</TH>
+    <TH class="r b header" scope=col>Mean Square</TH>
+    <TH class="r b header" scope=col>F Value</TH>
+    <TH class="r b header" scope=col>Pr&nbsp;&gt;&nbsp;F</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TH class="l rowheader" scope=row>1</TH>
+    <TD class="r data">1</TD>
+    <TD class="r data">200.000000</TD>
+    <TD class="r data">200.000000</TD>
+    <TD class="r data">226.42</TD>
+    <TD class="r data">&lt;.0001</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>2</TH>
+    <TD class="r data">1</TD>
+    <TD class="r data">1.125000</TD>
+    <TD class="r data">1.125000</TD>
+    <TD class="r data">1.27</TD>
+    <TD class="r data">0.2768</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>3</TH>
+    <TD class="r data">1</TD>
+    <TD class="r data">1.125000</TD>
+    <TD class="r data">1.125000</TD>
+    <TD class="r data">1.27</TD>
+    <TD class="r data">0.2768</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>4</TH>
+    <TD class="r data">1</TD>
+    <TD class="r data">924.500000</TD>
+    <TD class="r data">924.500000</TD>
+    <TD class="r data">1046.60</TD>
+    <TD class="r data">&lt;.0001</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>5</TH>
+    <TD class="r data">1</TD>
+    <TD class="r data">2.000000</TD>
+    <TD class="r data">2.000000</TD>
+    <TD class="r data">2.26</TD>
+    <TD class="r data">0.1532</TD></TR></TBODY></TABLE></DIV></DIV><BR></DIV>
+<DIV class=branch>
+<P style="PAGE-BREAK-AFTER: always"><BR></P>
+<HR SIZE=3>
+<A name=IDX17></A>
+<TABLE class=systitleandfootercontainer cellSpacing=1 cellPadding=1 rules=none 
+width="100%" summary="Page Layout" border=0 frame=void>
+  <TBODY>
+  <TR>
+    <TD class="c systemtitle">PARCELA SUBDIVIDIDA E 
+VARIAÇÕES</TD></TR></TBODY></TABLE><BR>
+<DIV class="c proctitle">The GLM Procedure</DIV>
+<P>
+<DIV>
+<DIV align=center>
+<TABLE class=table borderColor=#c1c1c1 cellSpacing=0 cellPadding=5 rules=all 
+summary="Procedure GLM: Class Levels" frame=box>
+  <COLGROUP>
+  <COL></COLGROUP>
+  <COLGROUP>
+  <COL>
+  <COL></COLGROUP>
+  <THEAD>
+  <TR>
+    <TH class="c b header" colSpan=3 scope=colgroup>Class Level 
+  Information</TH></TR>
+  <TR>
+    <TH class="l b header" scope=col>Class</TH>
+    <TH class="r b header" scope=col>Levels</TH>
+    <TH class="l b header" scope=col>Values</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TH class="l rowheader" scope=row>LOCAL</TH>
+    <TD class="r data">4</TD>
+    <TD class="l data">1 2 3 4</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>BLOCO</TH>
+    <TD class="r data">12</TD>
+    <TD class="l data">1 2 3 4 5 6 7 8 9 10 11 12</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>CULTIVAR</TH>
+    <TD class="r data">4</TD>
+    <TD class="l data">1 2 3 4</TD></TR></TBODY></TABLE></DIV></DIV><BR><A 
+name=IDX18></A>
+<DIV>
+<DIV align=center>
+<TABLE class=table borderColor=#c1c1c1 cellSpacing=0 cellPadding=5 rules=all 
+summary="Procedure GLM: Number of Observations" frame=box>
+  <COLGROUP>
+  <COL>
+  <COL></COLGROUP>
+  <TBODY>
+  <TR>
+    <TH class="l rowheader" scope=row>Number of Observations Read</TH>
+    <TD class="r data">48</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>Number of Observations Used</TH>
+    <TD class="r data">48</TD></TR></TBODY></TABLE></DIV></DIV><BR>
+<P style="PAGE-BREAK-AFTER: always"><BR></P>
+<HR SIZE=3>
+<A name=IDX19></A>
+<TABLE class=systitleandfootercontainer cellSpacing=1 cellPadding=1 rules=none 
+width="100%" summary="Page Layout" border=0 frame=void>
+  <TBODY>
+  <TR>
+    <TD class="c systemtitle">PARCELA SUBDIVIDIDA E 
+VARIAÇÕES</TD></TR></TBODY></TABLE><BR>
+<DIV class="c proctitle">The GLM Procedure</DIV>
+<DIV class="c proctitle">&nbsp;</DIV>
+<DIV class="l proctitle">Dependent Variable: RESP </DIV>
+<P>
+<DIV>
+<DIV align=center>
+<TABLE class=table borderColor=#c1c1c1 cellSpacing=0 cellPadding=5 rules=all 
+summary="Procedure GLM: Overall ANOVA" frame=box>
+  <COLGROUP>
+  <COL></COLGROUP>
+  <COLGROUP>
+  <COL>
+  <COL>
+  <COL>
+  <COL>
+  <COL></COLGROUP>
+  <THEAD>
+  <TR>
+    <TH class="l b header" scope=col>Source</TH>
+    <TH class="r b header" scope=col>DF</TH>
+    <TH class="r b header" scope=col>Sum of Squares</TH>
+    <TH class="r b header" scope=col>Mean Square</TH>
+    <TH class="r b header" scope=col>F Value</TH>
+    <TH class="r b header" scope=col>Pr&nbsp;&gt;&nbsp;F</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TH class="l rowheader" scope=row>Model</TH>
+    <TD class="r data">23</TD>
+    <TD class="r data">671730.3125</TD>
+    <TD class="r data">29205.6658</TD>
+    <TD class="r data">6.27</TD>
+    <TD class="r data">&lt;.0001</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>Error</TH>
+    <TD class="r data">24</TD>
+    <TD class="r data">111833.1667</TD>
+    <TD class="r data">4659.7153</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TD class="r data">&nbsp;</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>Corrected Total</TH>
+    <TD class="r data">47</TD>
+    <TD class="r data">783563.4792</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TD class="r data">&nbsp;</TD></TR></TBODY></TABLE></DIV></DIV><BR><A 
+name=IDX20></A>
+<DIV>
+<DIV align=center>
+<TABLE class=table borderColor=#c1c1c1 cellSpacing=0 cellPadding=5 rules=all 
+summary="Procedure GLM: Fit Statistics" frame=box>
+  <COLGROUP>
+  <COL>
+  <COL>
+  <COL>
+  <COL></COLGROUP>
+  <THEAD>
+  <TR>
+    <TH class="r b header" scope=col>R-Square</TH>
+    <TH class="r b header" scope=col>Coeff Var</TH>
+    <TH class="r b header" scope=col>Root MSE</TH>
+    <TH class="r b header" scope=col>RESP&nbsp;Mean</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="r data">0.857276</TD>
+    <TD class="r data">8.715007</TD>
+    <TD class="r data">68.26211</TD>
+    <TD class="r data">783.2708</TD></TR></TBODY></TABLE></DIV></DIV><BR><A 
+name=IDX21></A>
+<DIV>
+<DIV align=center>
+<TABLE class=table borderColor=#c1c1c1 cellSpacing=0 cellPadding=5 rules=all 
+summary="Procedure GLM: Type I Model ANOVA" frame=box>
+  <COLGROUP>
+  <COL></COLGROUP>
+  <COLGROUP>
+  <COL>
+  <COL>
+  <COL>
+  <COL>
+  <COL></COLGROUP>
+  <THEAD>
+  <TR>
+    <TH class="l b header" scope=col>Source</TH>
+    <TH class="r b header" scope=col>DF</TH>
+    <TH class="r b header" scope=col>Type I SS</TH>
+    <TH class="r b header" scope=col>Mean Square</TH>
+    <TH class="r b header" scope=col>F Value</TH>
+    <TH class="r b header" scope=col>Pr&nbsp;&gt;&nbsp;F</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TH class="l rowheader" scope=row>LOCAL</TH>
+    <TD class="r data">3</TD>
+    <TD class="r data">111095.8958</TD>
+    <TD class="r data">37031.9653</TD>
+    <TD class="r data">7.95</TD>
+    <TD class="r data">0.0007</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>CULTIVAR</TH>
+    <TD class="r data">3</TD>
+    <TD class="r data">262163.8958</TD>
+    <TD class="r data">87387.9653</TD>
+    <TD class="r data">18.75</TD>
+    <TD class="r data">&lt;.0001</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>LOCAL*CULTIVAR</TH>
+    <TD class="r data">9</TD>
+    <TD class="r data">199643.6875</TD>
+    <TD class="r data">22182.6319</TD>
+    <TD class="r data">4.76</TD>
+    <TD class="r data">0.0011</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>BLOCO(LOCAL)</TH>
+    <TD class="r data">8</TD>
+    <TD class="r data">98826.8333</TD>
+    <TD class="r data">12353.3542</TD>
+    <TD class="r data">2.65</TD>
+    <TD class="r data">0.0308</TD></TR></TBODY></TABLE></DIV></DIV><BR>
+<P style="PAGE-BREAK-AFTER: always"><BR></P>
+<HR SIZE=3>
+<A name=IDX22></A>
+<TABLE class=systitleandfootercontainer cellSpacing=1 cellPadding=1 rules=none 
+width="100%" summary="Page Layout" border=0 frame=void>
+  <TBODY>
+  <TR>
+    <TD class="c systemtitle">PARCELA SUBDIVIDIDA E 
+VARIAÇÕES</TD></TR></TBODY></TABLE><BR>
+<DIV class="c proctitle">The GLM Procedure</DIV>
+<DIV class="c proctitle">Least Squares Means</DIV>
+<P>
+<DIV>
+<DIV align=center>
+<TABLE class=table borderColor=#c1c1c1 cellSpacing=0 cellPadding=5 rules=all 
+summary="Procedure GLM: LSMeans" frame=box>
+  <COLGROUP>
+  <COL>
+  <COL></COLGROUP>
+  <COLGROUP>
+  <COL>
+  <COL></COLGROUP>
+  <THEAD>
+  <TR>
+    <TH class="l b header" scope=col>LOCAL</TH>
+    <TH class="l b header" scope=col>CULTIVAR</TH>
+    <TH class="r b header" scope=col>RESP LSMEAN</TH>
+    <TH class="r b header" scope=col>LSMEAN Number</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TH class="l rowheader" scope=row>1</TH>
+    <TH class="l rowheader" scope=row>1</TH>
+    <TD class="r data">924.333333</TD>
+    <TD class="r data">1</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>1</TH>
+    <TH class="l rowheader" scope=row>2</TH>
+    <TD class="r data">726.666667</TD>
+    <TD class="r data">2</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>1</TH>
+    <TH class="l rowheader" scope=row>3</TH>
+    <TD class="r data">793.333333</TD>
+    <TD class="r data">3</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>1</TH>
+    <TH class="l rowheader" scope=row>4</TH>
+    <TD class="r data">706.333333</TD>
+    <TD class="r data">4</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>2</TH>
+    <TH class="l rowheader" scope=row>1</TH>
+    <TD class="r data">957.000000</TD>
+    <TD class="r data">5</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>2</TH>
+    <TH class="l rowheader" scope=row>2</TH>
+    <TD class="r data">750.000000</TD>
+    <TD class="r data">6</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>2</TH>
+    <TH class="l rowheader" scope=row>3</TH>
+    <TD class="r data">810.666667</TD>
+    <TD class="r data">7</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>2</TH>
+    <TH class="l rowheader" scope=row>4</TH>
+    <TD class="r data">695.000000</TD>
+    <TD class="r data">8</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>3</TH>
+    <TH class="l rowheader" scope=row>1</TH>
+    <TD class="r data">856.333333</TD>
+    <TD class="r data">9</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>3</TH>
+    <TH class="l rowheader" scope=row>2</TH>
+    <TD class="r data">633.333333</TD>
+    <TD class="r data">10</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>3</TH>
+    <TH class="l rowheader" scope=row>3</TH>
+    <TD class="r data">726.000000</TD>
+    <TD class="r data">11</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>3</TH>
+    <TH class="l rowheader" scope=row>4</TH>
+    <TD class="r data">607.333333</TD>
+    <TD class="r data">12</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>4</TH>
+    <TH class="l rowheader" scope=row>1</TH>
+    <TD class="r data">894.333333</TD>
+    <TD class="r data">13</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>4</TH>
+    <TH class="l rowheader" scope=row>2</TH>
+    <TD class="r data">751.666667</TD>
+    <TD class="r data">14</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>4</TH>
+    <TH class="l rowheader" scope=row>3</TH>
+    <TD class="r data">712.666667</TD>
+    <TD class="r data">15</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>4</TH>
+    <TH class="l rowheader" scope=row>4</TH>
+    <TD class="r data">987.333333</TD>
+    <TD class="r data">16</TD></TR></TBODY></TABLE></DIV></DIV><BR><A 
+name=IDX23></A>
+<DIV>
+<DIV align=center>
+<TABLE class=table borderColor=#c1c1c1 cellSpacing=0 cellPadding=5 rules=all 
+summary="Procedure GLM: Difference Matrix" frame=box>
+  <COLGROUP>
+  <COL></COLGROUP>
+  <COLGROUP>
+  <COL>
+  <COL>
+  <COL>
+  <COL>
+  <COL>
+  <COL>
+  <COL>
+  <COL>
+  <COL>
+  <COL>
+  <COL>
+  <COL>
+  <COL>
+  <COL>
+  <COL>
+  <COL></COLGROUP>
+  <THEAD>
+  <TR>
+    <TH class="c b header" colSpan=17 scope=colgroup>Least Squares Means for 
+      effect LOCAL*CULTIVAR<BR>Pr &gt; |t| for H0: 
+      LSMean(i)=LSMean(j)<BR>Dependent Variable: RESP</TH></TR>
+  <TR>
+    <TH class="l b header" scope=col>i/j</TH>
+    <TH class="r b header" scope=col>1</TH>
+    <TH class="r b header" scope=col>2</TH>
+    <TH class="r b header" scope=col>3</TH>
+    <TH class="r b header" scope=col>4</TH>
+    <TH class="r b header" scope=col>5</TH>
+    <TH class="r b header" scope=col>6</TH>
+    <TH class="r b header" scope=col>7</TH>
+    <TH class="r b header" scope=col>8</TH>
+    <TH class="r b header" scope=col>9</TH>
+    <TH class="r b header" scope=col>10</TH>
+    <TH class="r b header" scope=col>11</TH>
+    <TH class="r b header" scope=col>12</TH>
+    <TH class="r b header" scope=col>13</TH>
+    <TH class="r b header" scope=col>14</TH>
+    <TH class="r b header" scope=col>15</TH>
+    <TH class="r b header" scope=col>16</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TH class="l rowheader" scope=row>1</TH>
+    <TD class="r data">&nbsp;</TD>
+    <TD class="r data">0.0016</TD>
+    <TD class="r data">0.0273</TD>
+    <TD class="r data">0.0007</TD>
+    <TD class="r data">0.5633</TD>
+    <TD class="r data">0.0046</TD>
+    <TD class="r data">0.0526</TD>
+    <TD class="r data">0.0004</TD>
+    <TD class="r data">0.2343</TD>
+    <TD class="r data">&lt;.0001</TD>
+    <TD class="r data">0.0016</TD>
+    <TD class="r data">&lt;.0001</TD>
+    <TD class="r data">0.5954</TD>
+    <TD class="r data">0.0049</TD>
+    <TD class="r data">0.0009</TD>
+    <TD class="r data">0.2695</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>2</TH>
+    <TD class="r data">0.0016</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TD class="r data">0.2433</TD>
+    <TD class="r data">0.7184</TD>
+    <TD class="r data">0.0004</TD>
+    <TD class="r data">0.6792</TD>
+    <TD class="r data">0.1448</TD>
+    <TD class="r data">0.5752</TD>
+    <TD class="r data">0.0288</TD>
+    <TD class="r data">0.1070</TD>
+    <TD class="r data">0.9906</TD>
+    <TD class="r data">0.0426</TD>
+    <TD class="r data">0.0061</TD>
+    <TD class="r data">0.6578</TD>
+    <TD class="r data">0.8038</TD>
+    <TD class="r data">&lt;.0001</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>3</TH>
+    <TD class="r data">0.0273</TD>
+    <TD class="r data">0.2433</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TD class="r data">0.1316</TD>
+    <TD class="r data">0.0072</TD>
+    <TD class="r data">0.4445</TD>
+    <TD class="r data">0.7585</TD>
+    <TD class="r data">0.0904</TD>
+    <TD class="r data">0.2695</TD>
+    <TD class="r data">0.0084</TD>
+    <TD class="r data">0.2388</TD>
+    <TD class="r data">0.0028</TD>
+    <TD class="r data">0.0825</TD>
+    <TD class="r data">0.4620</TD>
+    <TD class="r data">0.1607</TD>
+    <TD class="r data">0.0019</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>4</TH>
+    <TD class="r data">0.0007</TD>
+    <TD class="r data">0.7184</TD>
+    <TD class="r data">0.1316</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TD class="r data">0.0001</TD>
+    <TD class="r data">0.4410</TD>
+    <TD class="r data">0.0735</TD>
+    <TD class="r data">0.8406</TD>
+    <TD class="r data">0.0128</TD>
+    <TD class="r data">0.2027</TD>
+    <TD class="r data">0.7273</TD>
+    <TD class="r data">0.0884</TD>
+    <TD class="r data">0.0025</TD>
+    <TD class="r data">0.4240</TD>
+    <TD class="r data">0.9105</TD>
+    <TD class="r data">&lt;.0001</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>5</TH>
+    <TD class="r data">0.5633</TD>
+    <TD class="r data">0.0004</TD>
+    <TD class="r data">0.0072</TD>
+    <TD class="r data">0.0001</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TD class="r data">0.0011</TD>
+    <TD class="r data">0.0148</TD>
+    <TD class="r data">&lt;.0001</TD>
+    <TD class="r data">0.0835</TD>
+    <TD class="r data">&lt;.0001</TD>
+    <TD class="r data">0.0004</TD>
+    <TD class="r data">&lt;.0001</TD>
+    <TD class="r data">0.2720</TD>
+    <TD class="r data">0.0012</TD>
+    <TD class="r data">0.0002</TD>
+    <TD class="r data">0.5913</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>6</TH>
+    <TD class="r data">0.0046</TD>
+    <TD class="r data">0.6792</TD>
+    <TD class="r data">0.4445</TD>
+    <TD class="r data">0.4410</TD>
+    <TD class="r data">0.0011</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TD class="r data">0.2872</TD>
+    <TD class="r data">0.3336</TD>
+    <TD class="r data">0.0685</TD>
+    <TD class="r data">0.0471</TD>
+    <TD class="r data">0.6706</TD>
+    <TD class="r data">0.0172</TD>
+    <TD class="r data">0.0161</TD>
+    <TD class="r data">0.9764</TD>
+    <TD class="r data">0.5094</TD>
+    <TD class="r data">0.0003</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>7</TH>
+    <TD class="r data">0.0526</TD>
+    <TD class="r data">0.1448</TD>
+    <TD class="r data">0.7585</TD>
+    <TD class="r data">0.0735</TD>
+    <TD class="r data">0.0148</TD>
+    <TD class="r data">0.2872</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TD class="r data">0.0488</TD>
+    <TD class="r data">0.4207</TD>
+    <TD class="r data">0.0040</TD>
+    <TD class="r data">0.1418</TD>
+    <TD class="r data">0.0013</TD>
+    <TD class="r data">0.1464</TD>
+    <TD class="r data">0.3003</TD>
+    <TD class="r data">0.0914</TD>
+    <TD class="r data">0.0041</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>8</TH>
+    <TD class="r data">0.0004</TD>
+    <TD class="r data">0.5752</TD>
+    <TD class="r data">0.0904</TD>
+    <TD class="r data">0.8406</TD>
+    <TD class="r data">&lt;.0001</TD>
+    <TD class="r data">0.3336</TD>
+    <TD class="r data">0.0488</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TD class="r data">0.0080</TD>
+    <TD class="r data">0.2795</TD>
+    <TD class="r data">0.5832</TD>
+    <TD class="r data">0.1288</TD>
+    <TD class="r data">0.0015</TD>
+    <TD class="r data">0.3194</TD>
+    <TD class="r data">0.7540</TD>
+    <TD class="r data">&lt;.0001</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>9</TH>
+    <TD class="r data">0.2343</TD>
+    <TD class="r data">0.0288</TD>
+    <TD class="r data">0.2695</TD>
+    <TD class="r data">0.0128</TD>
+    <TD class="r data">0.0835</TD>
+    <TD class="r data">0.0685</TD>
+    <TD class="r data">0.4207</TD>
+    <TD class="r data">0.0080</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TD class="r data">0.0005</TD>
+    <TD class="r data">0.0280</TD>
+    <TD class="r data">0.0002</TD>
+    <TD class="r data">0.5019</TD>
+    <TD class="r data">0.0726</TD>
+    <TD class="r data">0.0165</TD>
+    <TD class="r data">0.0273</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>10</TH>
+    <TD class="r data">&lt;.0001</TD>
+    <TD class="r data">0.1070</TD>
+    <TD class="r data">0.0084</TD>
+    <TD class="r data">0.2027</TD>
+    <TD class="r data">&lt;.0001</TD>
+    <TD class="r data">0.0471</TD>
+    <TD class="r data">0.0040</TD>
+    <TD class="r data">0.2795</TD>
+    <TD class="r data">0.0005</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TD class="r data">0.1094</TD>
+    <TD class="r data">0.6451</TD>
+    <TD class="r data">&lt;.0001</TD>
+    <TD class="r data">0.0443</TD>
+    <TD class="r data">0.1675</TD>
+    <TD class="r data">&lt;.0001</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>11</TH>
+    <TD class="r data">0.0016</TD>
+    <TD class="r data">0.9906</TD>
+    <TD class="r data">0.2388</TD>
+    <TD class="r data">0.7273</TD>
+    <TD class="r data">0.0004</TD>
+    <TD class="r data">0.6706</TD>
+    <TD class="r data">0.1418</TD>
+    <TD class="r data">0.5832</TD>
+    <TD class="r data">0.0280</TD>
+    <TD class="r data">0.1094</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TD class="r data">0.0437</TD>
+    <TD class="r data">0.0059</TD>
+    <TD class="r data">0.6493</TD>
+    <TD class="r data">0.8130</TD>
+    <TD class="r data">&lt;.0001</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>12</TH>
+    <TD class="r data">&lt;.0001</TD>
+    <TD class="r data">0.0426</TD>
+    <TD class="r data">0.0028</TD>
+    <TD class="r data">0.0884</TD>
+    <TD class="r data">&lt;.0001</TD>
+    <TD class="r data">0.0172</TD>
+    <TD class="r data">0.0013</TD>
+    <TD class="r data">0.1288</TD>
+    <TD class="r data">0.0002</TD>
+    <TD class="r data">0.6451</TD>
+    <TD class="r data">0.0437</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TD class="r data">&lt;.0001</TD>
+    <TD class="r data">0.0161</TD>
+    <TD class="r data">0.0709</TD>
+    <TD class="r data">&lt;.0001</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>13</TH>
+    <TD class="r data">0.5954</TD>
+    <TD class="r data">0.0061</TD>
+    <TD class="r data">0.0825</TD>
+    <TD class="r data">0.0025</TD>
+    <TD class="r data">0.2720</TD>
+    <TD class="r data">0.0161</TD>
+    <TD class="r data">0.1464</TD>
+    <TD class="r data">0.0015</TD>
+    <TD class="r data">0.5019</TD>
+    <TD class="r data">&lt;.0001</TD>
+    <TD class="r data">0.0059</TD>
+    <TD class="r data">&lt;.0001</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TD class="r data">0.0172</TD>
+    <TD class="r data">0.0033</TD>
+    <TD class="r data">0.1082</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>14</TH>
+    <TD class="r data">0.0049</TD>
+    <TD class="r data">0.6578</TD>
+    <TD class="r data">0.4620</TD>
+    <TD class="r data">0.4240</TD>
+    <TD class="r data">0.0012</TD>
+    <TD class="r data">0.9764</TD>
+    <TD class="r data">0.3003</TD>
+    <TD class="r data">0.3194</TD>
+    <TD class="r data">0.0726</TD>
+    <TD class="r data">0.0443</TD>
+    <TD class="r data">0.6493</TD>
+    <TD class="r data">0.0161</TD>
+    <TD class="r data">0.0172</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TD class="r data">0.4908</TD>
+    <TD class="r data">0.0003</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>15</TH>
+    <TD class="r data">0.0009</TD>
+    <TD class="r data">0.8038</TD>
+    <TD class="r data">0.1607</TD>
+    <TD class="r data">0.9105</TD>
+    <TD class="r data">0.0002</TD>
+    <TD class="r data">0.5094</TD>
+    <TD class="r data">0.0914</TD>
+    <TD class="r data">0.7540</TD>
+    <TD class="r data">0.0165</TD>
+    <TD class="r data">0.1675</TD>
+    <TD class="r data">0.8130</TD>
+    <TD class="r data">0.0709</TD>
+    <TD class="r data">0.0033</TD>
+    <TD class="r data">0.4908</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TD class="r data">&lt;.0001</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>16</TH>
+    <TD class="r data">0.2695</TD>
+    <TD class="r data">&lt;.0001</TD>
+    <TD class="r data">0.0019</TD>
+    <TD class="r data">&lt;.0001</TD>
+    <TD class="r data">0.5913</TD>
+    <TD class="r data">0.0003</TD>
+    <TD class="r data">0.0041</TD>
+    <TD class="r data">&lt;.0001</TD>
+    <TD class="r data">0.0273</TD>
+    <TD class="r data">&lt;.0001</TD>
+    <TD class="r data">&lt;.0001</TD>
+    <TD class="r data">&lt;.0001</TD>
+    <TD class="r data">0.1082</TD>
+    <TD class="r data">0.0003</TD>
+    <TD class="r data">&lt;.0001</TD>
+    <TD class="r data">&nbsp;</TD></TR></TBODY></TABLE></DIV></DIV><BR><A 
+name=IDX24></A>
+<DIV>
+<DIV class=c><IMG class=c style="HEIGHT: 480px; WIDTH: 640px" border=0 
+alt="Plot of RESP least-squares means for LOCAL*CULTIVAR." 
+src="SAS%20Output_htm%23IDX29_arquivos/MeanPlot2.png"> </DIV></DIV><BR><A 
+name=IDX25></A>
+<DIV>
+<DIV class=c><IMG class=c style="HEIGHT: 480px; WIDTH: 480px" border=0 
+alt="Plot of all pairwise RESP least-squares means differences for LOCAL*CULTIVAR at significance level 0.05." 
+src="SAS%20Output_htm%23IDX29_arquivos/DiffPlot.png"> </DIV></DIV><BR><A 
+name=IDX26></A>
+<DIV>
+<DIV align=center>
+<TABLE class=table borderColor=#c1c1c1 cellSpacing=0 cellPadding=5 rules=all 
+summary="Procedure GLM: Comparisons" frame=box>
+  <COLGROUP>
+  <COL>
+  <COL>
+  <COL>
+  <COL>
+  <COL>
+  <COL>
+  <COL></COLGROUP>
+  <COLGROUP>
+  <COL></COLGROUP>
+  <THEAD>
+  <TR>
+    <TH class="c b header" colSpan=8 
+      scope=colgroup>T&nbsp;Comparison&nbsp;Lines&nbsp;for&nbsp;Least&nbsp;Squares&nbsp;Means&nbsp;of&nbsp;LOCAL*CULTIVAR</TH></TR>
+  <TR>
+    <TH class="c b header" colSpan=8 scope=colgroup>LS-means with the same 
+      letter<BR>are not significantly different.</TH></TR>
+  <TR>
+    <TH class="c headerempty" colSpan=4 scope=colgroup>&nbsp;</TH>
+    <TH class="r b header" scope=col>RESP LSMEAN</TH>
+    <TH class="l b header" scope=col>LOCAL</TH>
+    <TH class="l b header" scope=col>CULTIVAR</TH>
+    <TH class="r b header" scope=col>LSMEAN Number</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="l data">A</TD>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="r data">987.333</TD>
+    <TH class="l rowheader" scope=row>4</TH>
+    <TH class="l rowheader" scope=row>4</TH>
+    <TD class="r data">16</TD></TR>
+  <TR>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="l data">A</TD>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TH class="l rowheader" scope=row>&nbsp;</TH>
+    <TH class="l rowheader" scope=row>&nbsp;</TH>
+    <TD class="r data">&nbsp;</TD></TR>
+  <TR>
+    <TD class="l data">B</TD>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="l data">A</TD>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="r data">957.000</TD>
+    <TH class="l rowheader" scope=row>2</TH>
+    <TH class="l rowheader" scope=row>1</TH>
+    <TD class="r data">5</TD></TR>
+  <TR>
+    <TD class="l data">B</TD>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="l data">A</TD>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TH class="l rowheader" scope=row>&nbsp;</TH>
+    <TH class="l rowheader" scope=row>&nbsp;</TH>
+    <TD class="r data">&nbsp;</TD></TR>
+  <TR>
+    <TD class="l data">B</TD>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="l data">A</TD>
+    <TD class="l data">C</TD>
+    <TD class="r data">924.333</TD>
+    <TH class="l rowheader" scope=row>1</TH>
+    <TH class="l rowheader" scope=row>1</TH>
+    <TD class="r data">1</TD></TR>
+  <TR>
+    <TD class="l data">B</TD>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="l data">A</TD>
+    <TD class="l data">C</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TH class="l rowheader" scope=row>&nbsp;</TH>
+    <TH class="l rowheader" scope=row>&nbsp;</TH>
+    <TD class="r data">&nbsp;</TD></TR>
+  <TR>
+    <TD class="l data">B</TD>
+    <TD class="l data">D</TD>
+    <TD class="l data">A</TD>
+    <TD class="l data">C</TD>
+    <TD class="r data">894.333</TD>
+    <TH class="l rowheader" scope=row>4</TH>
+    <TH class="l rowheader" scope=row>1</TH>
+    <TD class="r data">13</TD></TR>
+  <TR>
+    <TD class="l data">B</TD>
+    <TD class="l data">D</TD>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="l data">C</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TH class="l rowheader" scope=row>&nbsp;</TH>
+    <TH class="l rowheader" scope=row>&nbsp;</TH>
+    <TD class="r data">&nbsp;</TD></TR>
+  <TR>
+    <TD class="l data">B</TD>
+    <TD class="l data">D</TD>
+    <TD class="l data">E</TD>
+    <TD class="l data">C</TD>
+    <TD class="r data">856.333</TD>
+    <TH class="l rowheader" scope=row>3</TH>
+    <TH class="l rowheader" scope=row>1</TH>
+    <TD class="r data">9</TD></TR>
+  <TR>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="l data">D</TD>
+    <TD class="l data">E</TD>
+    <TD class="l data">C</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TH class="l rowheader" scope=row>&nbsp;</TH>
+    <TH class="l rowheader" scope=row>&nbsp;</TH>
+    <TD class="r data">&nbsp;</TD></TR>
+  <TR>
+    <TD class="l data">F</TD>
+    <TD class="l data">D</TD>
+    <TD class="l data">E</TD>
+    <TD class="l data">C</TD>
+    <TD class="r data">810.667</TD>
+    <TH class="l rowheader" scope=row>2</TH>
+    <TH class="l rowheader" scope=row>3</TH>
+    <TD class="r data">7</TD></TR>
+  <TR>
+    <TD class="l data">F</TD>
+    <TD class="l data">D</TD>
+    <TD class="l data">E</TD>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TH class="l rowheader" scope=row>&nbsp;</TH>
+    <TH class="l rowheader" scope=row>&nbsp;</TH>
+    <TD class="r data">&nbsp;</TD></TR>
+  <TR>
+    <TD class="l data">F</TD>
+    <TD class="l data">D</TD>
+    <TD class="l data">E</TD>
+    <TD class="l data">G</TD>
+    <TD class="r data">793.333</TD>
+    <TH class="l rowheader" scope=row>1</TH>
+    <TH class="l rowheader" scope=row>3</TH>
+    <TD class="r data">3</TD></TR>
+  <TR>
+    <TD class="l data">F</TD>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="l data">E</TD>
+    <TD class="l data">G</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TH class="l rowheader" scope=row>&nbsp;</TH>
+    <TH class="l rowheader" scope=row>&nbsp;</TH>
+    <TD class="r data">&nbsp;</TD></TR>
+  <TR>
+    <TD class="l data">F</TD>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="l data">E</TD>
+    <TD class="l data">G</TD>
+    <TD class="r data">751.667</TD>
+    <TH class="l rowheader" scope=row>4</TH>
+    <TH class="l rowheader" scope=row>2</TH>
+    <TD class="r data">14</TD></TR>
+  <TR>
+    <TD class="l data">F</TD>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="l data">E</TD>
+    <TD class="l data">G</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TH class="l rowheader" scope=row>&nbsp;</TH>
+    <TH class="l rowheader" scope=row>&nbsp;</TH>
+    <TD class="r data">&nbsp;</TD></TR>
+  <TR>
+    <TD class="l data">F</TD>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="l data">E</TD>
+    <TD class="l data">G</TD>
+    <TD class="r data">750.000</TD>
+    <TH class="l rowheader" scope=row>2</TH>
+    <TH class="l rowheader" scope=row>2</TH>
+    <TD class="r data">6</TD></TR>
+  <TR>
+    <TD class="l data">F</TD>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="l data">G</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TH class="l rowheader" scope=row>&nbsp;</TH>
+    <TH class="l rowheader" scope=row>&nbsp;</TH>
+    <TD class="r data">&nbsp;</TD></TR>
+  <TR>
+    <TD class="l data">F</TD>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="l data">H</TD>
+    <TD class="l data">G</TD>
+    <TD class="r data">726.667</TD>
+    <TH class="l rowheader" scope=row>1</TH>
+    <TH class="l rowheader" scope=row>2</TH>
+    <TD class="r data">2</TD></TR>
+  <TR>
+    <TD class="l data">F</TD>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="l data">H</TD>
+    <TD class="l data">G</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TH class="l rowheader" scope=row>&nbsp;</TH>
+    <TH class="l rowheader" scope=row>&nbsp;</TH>
+    <TD class="r data">&nbsp;</TD></TR>
+  <TR>
+    <TD class="l data">F</TD>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="l data">H</TD>
+    <TD class="l data">G</TD>
+    <TD class="r data">726.000</TD>
+    <TH class="l rowheader" scope=row>3</TH>
+    <TH class="l rowheader" scope=row>3</TH>
+    <TD class="r data">11</TD></TR>
+  <TR>
+    <TD class="l data">F</TD>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="l data">H</TD>
+    <TD class="l data">G</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TH class="l rowheader" scope=row>&nbsp;</TH>
+    <TH class="l rowheader" scope=row>&nbsp;</TH>
+    <TD class="r data">&nbsp;</TD></TR>
+  <TR>
+    <TD class="l data">F</TD>
+    <TD class="l data">I</TD>
+    <TD class="l data">H</TD>
+    <TD class="l data">G</TD>
+    <TD class="r data">712.667</TD>
+    <TH class="l rowheader" scope=row>4</TH>
+    <TH class="l rowheader" scope=row>3</TH>
+    <TD class="r data">15</TD></TR>
+  <TR>
+    <TD class="l data">F</TD>
+    <TD class="l data">I</TD>
+    <TD class="l data">H</TD>
+    <TD class="l data">G</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TH class="l rowheader" scope=row>&nbsp;</TH>
+    <TH class="l rowheader" scope=row>&nbsp;</TH>
+    <TD class="r data">&nbsp;</TD></TR>
+  <TR>
+    <TD class="l data">F</TD>
+    <TD class="l data">I</TD>
+    <TD class="l data">H</TD>
+    <TD class="l data">G</TD>
+    <TD class="r data">706.333</TD>
+    <TH class="l rowheader" scope=row>1</TH>
+    <TH class="l rowheader" scope=row>4</TH>
+    <TD class="r data">4</TD></TR>
+  <TR>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="l data">I</TD>
+    <TD class="l data">H</TD>
+    <TD class="l data">G</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TH class="l rowheader" scope=row>&nbsp;</TH>
+    <TH class="l rowheader" scope=row>&nbsp;</TH>
+    <TD class="r data">&nbsp;</TD></TR>
+  <TR>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="l data">I</TD>
+    <TD class="l data">H</TD>
+    <TD class="l data">G</TD>
+    <TD class="r data">695.000</TD>
+    <TH class="l rowheader" scope=row>2</TH>
+    <TH class="l rowheader" scope=row>4</TH>
+    <TD class="r data">8</TD></TR>
+  <TR>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="l data">I</TD>
+    <TD class="l data">H</TD>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TH class="l rowheader" scope=row>&nbsp;</TH>
+    <TH class="l rowheader" scope=row>&nbsp;</TH>
+    <TD class="r data">&nbsp;</TD></TR>
+  <TR>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="l data">I</TD>
+    <TD class="l data">H</TD>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="r data">633.333</TD>
+    <TH class="l rowheader" scope=row>3</TH>
+    <TH class="l rowheader" scope=row>2</TH>
+    <TD class="r data">10</TD></TR>
+  <TR>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="l data">I</TD>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TH class="l rowheader" scope=row>&nbsp;</TH>
+    <TH class="l rowheader" scope=row>&nbsp;</TH>
+    <TD class="r data">&nbsp;</TD></TR>
+  <TR>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="l data">I</TD>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="r data">607.333</TD>
+    <TH class="l rowheader" scope=row>3</TH>
+    <TH class="l rowheader" scope=row>4</TH>
+    <TD class="r data">12</TD></TR></TBODY></TABLE></DIV></DIV><BR><BR>
+<P>
+<DIV align=left>
+<TABLE class=notecontent>
+  <TBODY>
+  <TR>
+    <TD class="l notebanner">Note:</TD>
+    <TD class="l notecontent">To ensure overall protection level, only 
+      probabilities associated with pre-planned comparisons should be 
+  used.</TD></TR></TBODY></TABLE></DIV>
+<P>
+<P style="PAGE-BREAK-AFTER: always"><BR></P>
+<HR SIZE=3>
+<A name=IDX27></A>
+<TABLE class=systitleandfootercontainer cellSpacing=1 cellPadding=1 rules=none 
+width="100%" summary="Page Layout" border=0 frame=void>
+  <TBODY>
+  <TR>
+    <TD class="c systemtitle">PARCELA SUBDIVIDIDA E 
+VARIAÇÕES</TD></TR></TBODY></TABLE><BR>
+<DIV class="c proctitle">The GLM Procedure</DIV>
+<P>
+<DIV>
+<DIV class=c><IMG class=c style="HEIGHT: 480px; WIDTH: 640px" border=0 
+alt="Distribution of RESP by CULTIVAR" 
+src="SAS%20Output_htm%23IDX29_arquivos/BoxPlot1.png"> </DIV></DIV><BR>
+<P style="PAGE-BREAK-AFTER: always"><BR></P>
+<HR SIZE=3>
+<A name=IDX28></A>
+<TABLE class=systitleandfootercontainer cellSpacing=1 cellPadding=1 rules=none 
+width="100%" summary="Page Layout" border=0 frame=void>
+  <TBODY>
+  <TR>
+    <TD class="c systemtitle">PARCELA SUBDIVIDIDA E 
+VARIAÇÕES</TD></TR></TBODY></TABLE><BR>
+<DIV class="c proctitle">The GLM Procedure</DIV>
+<DIV class="c proctitle">&nbsp;</DIV>
+<DIV class="c proctitle">t Tests (LSD) for RESP</DIV>
+<P><BR>
+<P>
+<DIV align=center>
+<TABLE class=notecontent>
+  <TBODY>
+  <TR>
+    <TD class="c notebanner">Note:</TD>
+    <TD class="l notecontent">This test controls the Type I comparisonwise 
+      error rate, not the experimentwise error rate.</TD></TR></TBODY></TABLE></DIV>
+<P>
+<DIV>
+<DIV align=center>
+<TABLE class=table borderColor=#c1c1c1 cellSpacing=0 cellPadding=5 rules=all 
+summary="Procedure GLM: Information" frame=box>
+  <COLGROUP>
+  <COL>
+  <COL></COLGROUP>
+  <TBODY>
+  <TR>
+    <TH class="l rowheader" scope=row>Alpha</TH>
+    <TD class="r data">0.05</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>Error Degrees of Freedom</TH>
+    <TD class="r data">24</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>Error Mean Square</TH>
+    <TD class="r data">4659.715</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>Critical Value of t</TH>
+    <TD class="r data">2.06390</TD></TR>
+  <TR>
+    <TH class="l rowheader" scope=row>Least Significant Difference</TH>
+    <TD class="r data">57.516</TD></TR></TBODY></TABLE></DIV></DIV><BR><A 
+name=IDX29></A>
+<DIV>
+<DIV align=center>
+<TABLE class=table borderColor=#c1c1c1 cellSpacing=0 cellPadding=5 rules=all 
+summary="Procedure GLM: Comparisons" frame=box>
+  <COLGROUP>
+  <COL>
+  <COL>
+  <COL>
+  <COL></COLGROUP>
+  <THEAD>
+  <TR>
+    <TH class="c b header" colSpan=4 scope=colgroup>Means with the same 
+      letter<BR>are not significantly different.</TH></TR>
+  <TR>
+    <TH class="c b header" scope=col>t&nbsp;Grouping</TH>
+    <TH class="r b header" scope=col>Mean</TH>
+    <TH class="r b header" scope=col>N</TH>
+    <TH class="l b header" scope=col>CULTIVAR</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="l data">A</TD>
+    <TD class="r data">908.00</TD>
+    <TD class="r data">12</TD>
+    <TD class="l data">1</TD></TR>
+  <TR>
+    <TD class="l data">&nbsp;</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TD class="l data">&nbsp;</TD></TR>
+  <TR>
+    <TD class="l data">B</TD>
+    <TD class="r data">760.67</TD>
+    <TD class="r data">12</TD>
+    <TD class="l data">3</TD></TR>
+  <TR>
+    <TD class="l data">B</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TD class="l data">&nbsp;</TD></TR>
+  <TR>
+    <TD class="l data">B</TD>
+    <TD class="r data">749.00</TD>
+    <TD class="r data">12</TD>
+    <TD class="l data">4</TD></TR>
+  <TR>
+    <TD class="l data">B</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TD class="r data">&nbsp;</TD>
+    <TD class="l data">&nbsp;</TD></TR>
+  <TR>
+    <TD class="l data">B</TD>
+    <TD class="r data">715.42</TD>
+    <TD class="r data">12</TD>
+    <TD 
+class="l data">2</TD></TR></TBODY></TABLE></DIV></DIV><BR></DIV></BODY></HTML>
