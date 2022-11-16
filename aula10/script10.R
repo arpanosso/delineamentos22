@@ -1,48 +1,39 @@
+## Carregando os pacotes necessários
 library(tidyverse)
 library(readxl)
 library(janitor)
 library(emmeans)
-planilhas <- excel_sheets("data/aula10.xlsx")
+library(agricolae)
+library(lme4)
+library(VCA)
 
-dados <- read_xlsx("data/aula10.xlsx",
-                   sheet = planilhas[1]) %>%
-  clean_names() %>%
-  mutate(across(is.character,as_factor))
-glimpse(dados)
+# Análise conjunta
+## Buscar os nomes das planilhas no arquivo
+## aula10.xlsx na pasta data
 
-mod <- aov(resp ~ bloco +fam,
-           data = dados %>%
-             mutate_at(vars(fam, bloco), as_factor))
-anova(mod)
+## Carregar o banco de dados de análise conjuta
 
-mod <- aov(resp ~ bloco + fam + Error(fam/bloco) + micro + fam:micro,
-           data = dados %>%
-             mutate_at(vars(fam, bloco), as_factor)
-           )
-summary(mod)
+## vislumbre do banco de dados
 
-fam <- dados$fam
-micro <- dados$micro
-bloco <- dados$bloco
-resp <-dados$resp
-ExpDes.pt::psub2.dbc(fam,micro,bloco,resp,mcomp="lsd")
+## Realizar o DBC por local
 
+## Gráfico das respostas por local
 
+## Análise conjunta
 
-# análise conjunta
-dados <- read_xlsx("data/aula10.xlsx",
-                   sheet = planilhas[2]) %>%
-  clean_names() %>%
-  mutate(across(is.character,as_factor))
-glimpse(dados)
+## Médias aujstadas por local.
+
+## Utilizar as predições de modelo misto
+
+## apresentar oe efeitos aleatórios
+
+## variãncias e correlações
 
 
-mod <- aov(resp ~local + cultivar + local:cultivar+bloco,
-           data = dados %>%
-             mutate_at(vars(local,bloco,cultivar),as_factor))
-anova(mod)
+# SplitPlot
+## Carregar o banco de dados de parcelas subdivididas
 
-# Médias marginais ajustadas por local.
-emm <- emmeans(mod, specs = ~cultivar:local)
-pairs(emm,
-      adjust="tukey")
+## vislumbre do banco de dados
+
+## Realizar a análise utilziando o pacote ExpDes.pt,
+## função psub2.dic.
