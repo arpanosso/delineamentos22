@@ -9,22 +9,65 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+# Diagnósticos da análise de variância
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+Todo delineamento experimental possui um modelo matemático que o representa, e deve ser levado em conta na análise de variância, **aceitando algumas hipóteses básicas necessárias para a validade da análise.** 
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+No caso do $DIC$, por exemplo, o modelo matemático é definido como:
 
-```{r cars}
-summary(cars)
-```
+$$
+y_{ij}= \mu + \tau_i + \epsilon_{ij}
+$$
+onde:
 
-## Including Plots
+$y_{ij}$: é o valor observado na parcela que recebeu o tratamento *i* na repetição *j*;
 
-You can also embed plots, for example:
+$\mu$: é a média geral do experimento;
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
+$\tau_i$ é o efeito devido ao tratamento *i* que foi aplicado à parcela;
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+$\epsilon_{ij}$ é o efeito dos fatores não controlados na parcela que recebeu o tratamento *i* na repetição *j*.
+
+## Hipóteses básicas para aplicação da análise de variância
+
+As hipóteses básicas que devemos admitir para tornar válida a aplicação da análise de variância são as seguintes:
+
+1) **Aditividade**: Os efeitos dos fatores do modelo são aditivos.
+  
+2) **Independência**: Os erros (desvios) $\epsilon_{ij}$, devido aos efeitos de fatores não controlados ou acaso devem ser independentes.
+  
+3) **Homocedasticidade (homogeneidade de variâncias)**: Os erros (desvios) $\epsilon_{ij}$, devido ao acaso devem possuir variância comum $\sigma^2$
+  
+4) **Normalidade dos desvios**: Os erros ou desvios $\epsilon_{ij}$ devido ao acaso devem possuir distribuição normal de probabilidades.
+
+Uma forma resumida de apresentar estas quatro pressuposições é apresentada a seguir:
+
+$$
+\epsilon_{ij} \overset{iid}{\tilde{} }N(0,\sigma^2)  \\
+$$
+  
+Quando as hipóteses básicas não são satisfeitas, como no caso mais frequente a **homocedasticidade**, deve-se utilizar uma transformação dos dados para contormar o problema.
+
+
+## Transformações
+
+### 1. Raiz Quadrada: $y'=\sqrt{y}$
+
+Geralmente utilizada para **dados de contagem**, que frequentemente seguem a distribuição de *Poisson*, em que a **média e a variância são iguais**. Exemplo, número de ácaros por folha, número de frutos atacados, número de plantas doentes por parcela, etc. No caso de ocorrência de valores nulos ou baixos, recomenda-se $y'=\sqrt{y+0,5}$ ou $y'=\sqrt{y+1}$.
+
+### 2. Arco Seno: $y'=arcoseno\sqrt{\frac{y}{100}}$
+
+Recomendada para **dados de porcentagem**, proveniente de contagem, que geralmente seguem a distribuição **binomial**, como exemplo, $\%$ de plantas atacadas, $\%$ de germinação, etc.
+
+### 3. Tranformação Potência**
+
+Quando é constatada uma certa **proporcionalidade entre as médias e os desvios padrões** dos tratamentos. Exemplo: No caso de contagem de insetos, se a população é numerosa, as contagens serão altas para a testemunha e para os tratamentos que não controlam a praga, enquanto que, para os tratamentos que controlam a praga, a amplitude de variação será baixa.
+
+Pode-se verificar isso pelo diagrama de dispersão,  visualizando a reta $y = a + b x$, plotando-se: $x = log(média)$ versus $y = log(desvio padrão)$. 
+
+  + Se $b=2,0$, a transformação adequada é a recíproca: $y' = y^{-1}$;
+  + Se $b=1,5$, a transformação adequada é a recíproca da raiz quadrada: $y' = y^{-1/2}$;
+  + Se $b=1,0$, a transformação adequada é a logaritmica : $y' =log(y)$;
+  + Se $b=0,5$, a transformação adequada é a raiz quadrada : $y' = y^{1/2}$.
+  + Se $b=0$, não faça transformação.
+
