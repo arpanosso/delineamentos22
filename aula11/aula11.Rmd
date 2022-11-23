@@ -305,7 +305,7 @@ Teste de Bartlet
 bartlett.test(log(dados$resp),dados$tempo)
 ```
 
-### Realizar o estudo outliers
+### Realizar o estudo de 'outliers'
 
 ```{r}
 dados %>% 
@@ -319,3 +319,23 @@ dados %>%
   geom_hline(yintercept = c(-3,3), color="red")
 ```
 
+#### Exercício
+
+Realizar os diagnósticos e as transformações, se necessário do dados referentes a:
+  +ENSAIO COM CIGARRINHAS (LEILA DINARDO MIRANDA IAC) 
+
+  +FATOR A= CULTIVARES (18) DE CANA 
+
+  +FATOR B= COM OU SEM CIGARRINHAS 
+
+  +Z=MEDIDA DA CLOROFILA 
+
+  +Y=PESO DAS PLANTAS
+  
+```{r, echo=FALSE,eval=TRUE}
+dados <- read_xlsx("../data/aula11.xlsx",
+                   sheet = "Cigarrinha") %>% 
+  clean_names()
+glimpse(dados)
+
+```
