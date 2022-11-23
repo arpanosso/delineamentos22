@@ -6,7 +6,10 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE,
+                    warning = FALSE,
+                    message = FALSE,
+                    error = FALSE)
 ```
 
 # Diagnósticos da análise de variância
@@ -59,7 +62,7 @@ Geralmente utilizada para **dados de contagem**, que frequentemente seguem a dis
 
 Recomendada para **dados de porcentagem**, proveniente de contagem, que geralmente seguem a distribuição **binomial**, como exemplo, $\%$ de plantas atacadas, $\%$ de germinação, etc.
 
-### 3. Tranformação Potência**
+### 3. Tranformação Potência
 
 Quando é constatada uma certa **proporcionalidade entre as médias e os desvios padrões** dos tratamentos. Exemplo: No caso de contagem de insetos, se a população é numerosa, as contagens serão altas para a testemunha e para os tratamentos que não controlam a praga, enquanto que, para os tratamentos que controlam a praga, a amplitude de variação será baixa.
 
@@ -67,7 +70,252 @@ Pode-se verificar isso pelo diagrama de dispersão,  visualizando a reta $y = a 
 
   + Se $b=2,0$, a transformação adequada é a recíproca: $y' = y^{-1}$;
   + Se $b=1,5$, a transformação adequada é a recíproca da raiz quadrada: $y' = y^{-1/2}$;
-  + Se $b=1,0$, a transformação adequada é a logaritmica : $y' =log(y)$;
+  + Se $b=1,0$, a transformação adequada é a logarítmica : $y' =log(y)$;
   + Se $b=0,5$, a transformação adequada é a raiz quadrada : $y' = y^{1/2}$.
   + Se $b=0$, não faça transformação.
+
+#### Exemplo 01
+
+Para esse exemplo, vamos os dados de crescimendo de uma cultura em $5$ tempos distintos, disponível no arquivo aula11.xlsx, planilha denominada "Crescimento".
+
+#### Carregando os pacotes necessários.
+```{r}
+library(tidyverse)
+library(readxl)
+library(janitor)
+library(nortest)
+library(lawstat)
+library(MASS)
+```
+
+#### Lendo o banco de dados e criando um resumo rápido.
+
+Pode ser acessado em [aula11.xlsx](https://github.com/arpanosso/delineamentos22/raw/master/data/aula11.xlsx) disponível na pasta *data* do projeto.
+
+```{r, echo=FALSE,eval=TRUE}
+dados <- read_xlsx("../data/aula11.xlsx",
+                   sheet = "Crescimento") %>% 
+  clean_names()
+```
+
+```{r, echo=TRUE,eval=FALSE}
+dados <- read_xlsx("/data/aula11.xlsx",
+                   sheet = "Crescimento") %>% 
+  clean_names()
+```
+
+```{r}
+glimpse(dados)
+```
+
+#### Gráfico da resposta em função do tempo.
+
+```{r}
+dados %>% 
+  ggplot(aes(x=tempo, y=resp)) + 
+  geom_point() +
+  geom_smooth(method = "lm", se=FALSE,
+              formula = y ~ poly(x, 3)
+              )
+```
+
+### Encontrando a equação da curva de ajuste.
+```{r}
+lm(resp ~ tempo + tempo2 + tempo3,
+   data = dados %>% 
+     mutate(
+       tempo2=tempo^2,
+       tempo3=tempo^3,
+     )) %>% summary()
+```
+
+#### Agora precisamos da tabela da média e do desvio padrão.
+
+```{r}
+dados %>% 
+  group_by(tempo) %>% 
+  summarise(
+    media = mean(resp),
+    dp = sd(resp),
+    Log_media = log10(media),
+    Log_dp = log10(dp)
+  )
+```
+
+#### De posse da tabela, vamos fazer o gráfico de Log_dp versus Log_media.
+
+```{r}
+dados %>% 
+  group_by(tempo) %>% 
+  summarise(
+    media = mean(resp),
+    dp = sd(resp),
+    Log_media = log10(media),
+    Log_dp = log10(dp)
+  ) %>% 
+  ggplot(aes(x=Log_media, y=Log_dp)) +
+  geom_point(size=3, shape=16, color="blue") +
+  geom_smooth(method="lm", se=FALSE, color="red")
+```
+
+```{r}
+lm(Log_dp ~ Log_media,
+   data= dados %>% 
+  group_by(tempo) %>% 
+  summarise(
+    media = mean(resp),
+    dp = sd(resp),
+    Log_media = log10(media),
+    Log_dp = log10(dp)
+  )) %>% summary()
+
+```
+
+A transformação é aproximadamente Log.
+
+
+```{r}
+dados %>% 
+  mutate(log_resp = log10(resp)) %>% 
+  ggplot(aes(x=tempo, y=log_resp)) + 
+  geom_point() +
+  geom_smooth(method = "lm", se=FALSE,
+              formula = y ~ poly(x, 3)
+              )
+```
+
+### Contruir o boxplot
+
+```{r}
+dados %>% 
+  group_by(tempo) %>% 
+  ggplot(aes(y=resp, x=as.factor(tempo),
+             fill=as.factor(tempo))) +
+  geom_boxplot()
+```
+
+
+
+```{r}
+lm(log_resp ~ tempo + tempo2 + tempo3,
+   data = dados %>% 
+     mutate(
+       log_resp = log10(resp),
+       tempo2=tempo^2,
+       tempo3=tempo^3,
+     )) %>% summary()
+```
+**OBS** com a transformação logarítmica (b similar a 1) há homogenenidade das variâncias e menor ponto de inflexão.
+
+
+### 4. Tranformação Box-Cox
+
+A transformação de Box-Cox é dada pela seguinte fórmula:
+
+$$
+W_i = Y_i^\lambda, \text{ se } \lambda \neq 0 \\
+W_i = Ln(Y_i), \text{ se } \lambda = 0 \\ 
+W_i = Y_i, \text{ se } \lambda = 1
+$$
+onde $Y_i$ é um valor de dados original e $\lambda$ é o parâmetro para a transformação. Observe que $\lambda = 1.0$  **NÂO TRANSFORMAR**.
+
+$$
+\begin{aligned}
+  \lambda &= -1.0, \text{ } x_i(\lambda) = \frac{1}{x_i} \\
+  \lambda &= -0.5, \text{ } x_i(\lambda) = \frac{1}{\sqrt{x_i}} \\
+  \lambda &= 0.0, \text{ } x_i(\lambda) = Ln(x_i) \\
+  \lambda &= 0.5, \text{ } x_i(\lambda) = \sqrt{x_i} \\
+  \lambda &= 2.0, \text{ } x_i(\lambda) = x_i^2
+\end{aligned}
+$$
+A utilização da transformação Box-Cox, por ser uma transformação do tipo potência, não detecta alguns tipos de transformação classicamente utilizados, por exemplo "arco seno raiz(porcentagem/100)", usado para porcentagens binomiais.
+
+```{r}
+mod <- lm(resp ~ tempo,
+          data = dados)
+boxcox(mod)
+```
+
+```{r}
+mod2 <- lm(log(resp) ~ tempo,
+          data = dados)
+boxcox(mod2)
+```
+
+### Construir o boxplot
+
+```{r}
+dados %>% 
+  group_by(tempo) %>% 
+  ggplot(aes(y=log(resp), x=as.factor(tempo),
+             fill=as.factor(tempo))) +
+  geom_boxplot()
+```
+
+### Realizar o teste de normalidade dos resíduos do modelo, apresentando o histograma dos mesmos
+
+```{r}
+dados %>% 
+  mutate(
+    rs = rstudent(lm(resp ~ tempo))
+  ) %>% 
+  ggplot(aes(x=rs, y=..density..)) +
+  geom_histogram(bins=5, color="black",fill="gray") +
+  geom_density(fill="red", alpha=.12)
+```
+
+```{r}
+rs <- dados %>% 
+  mutate(
+    rs = rstudent(lm(resp ~ tempo))
+  ) %>% pull(rs)
+shapiro.test(rs)
+ad.test(rs)
+cvm.test(rs)
+lillie.test(rs)
+```
+
+### Construir o qqplot 
+
+```{r}
+dados %>% 
+  mutate(
+    rs = rstudent(lm(resp ~ tempo))
+  ) %>% 
+  ggplot(aes(sample = rs)) +
+  stat_qq() +
+  stat_qq_line()
+```
+
+### Realizar os testes de homocedasticidade
+
+#### Teste de Brown & Forsythe
+```{r}
+levene.test(dados$resp,dados$tempo)
+```
+
+### Teste de Levene
+
+```{r}
+levene.test(dados$resp,dados$tempo, location = "mean")
+```
+
+Teste de Bartlet
+```{r}
+bartlett.test(log(dados$resp),dados$tempo)
+```
+
+### Realizar o estudo outliers
+
+```{r}
+dados %>% 
+  mutate(
+    rs = lm(log(resp) ~tempo) %>% rstudent,
+    yp = lm(log(resp) ~tempo) %>% predict()
+  ) %>% 
+  ggplot(aes(x=yp,y=rs)) +
+  geom_point() +
+  coord_cartesian(ylim=c(-4,4)) +
+  geom_hline(yintercept = c(-3,3), color="red")
+```
 
