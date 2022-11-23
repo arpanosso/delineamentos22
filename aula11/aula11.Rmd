@@ -321,16 +321,17 @@ dados %>%
 
 #### Exercício
 
-Realizar os diagnósticos e as transformações, se necessário do dados referentes a:
-  +ENSAIO COM CIGARRINHAS (LEILA DINARDO MIRANDA IAC) 
+Realizar os diagnósticos e as transformações, se necessário do dados referentes a:  
 
-  +FATOR A= CULTIVARES (18) DE CANA 
+  + ENSAIO COM CIGARRINHAS (LEILA DINARDO MIRANDA IAC) 
 
-  +FATOR B= COM OU SEM CIGARRINHAS 
+  + FATOR A= CULTIVARES (18) DE CANA 
 
-  +Z=MEDIDA DA CLOROFILA 
+  + FATOR B= COM OU SEM CIGARRINHAS 
 
-  +Y=PESO DAS PLANTAS
+  + Z=MEDIDA DA CLOROFILA 
+
+  + Y=PESO DAS PLANTAS
   
 ```{r, echo=FALSE,eval=TRUE}
 dados <- read_xlsx("../data/aula11.xlsx",
